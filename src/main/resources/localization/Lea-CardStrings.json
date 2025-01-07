@@ -1,0 +1,35 @@
+{
+  "leacrosscode:Hit": {
+    "NAME": "Hit",
+    "DESCRIPTION": "Deal !D! damage to the front ennemi. Gain !SP_G! SP.",
+    "EXTENDED_DESCRIPTION": [ "Hi !" ]
+  },
+  "leacrosscode:Dash": {
+    "NAME": "Dash",
+    "DESCRIPTION": "Gain !B! Block. Draw !M! cards."
+  },
+  "leacrosscode:SphereSaw": {
+    "NAME": "Sphere Saw",
+    "DESCRIPTION": "Deal !D! damage to the front ennemi. Apply !M! Vulnerable."
+  },
+  "leacrosscode:Hit&Block" : {
+    "NAME": "Hit & Block",
+    "DESCRIPTION": "Deal !D! damage to the front ennemi. Gain !M! Protection. Gain !SP_G! SP."
+  },
+  "leacrosscode:TripleHits" : {
+    "NAME": "Triple hits",
+    "DESCRIPTION": "Deal !D!x2 damage to the front ennemi. Then, deal !M! damage to ALL ennemis. Gain !SP_G! SP."
+  },
+  "leacrosscode:Wait" : {
+    "NAME" : "Wait !",
+    "DESCRIPTION" : "Gain [E] [E]. Draw !M! cards. Exhaust."
+  },
+  "leacrosscode:VPRCharge" : {
+    "NAME" : "VPR Chargé !",
+    "DESCRIPTION" : "Deal !D! damage to an ennemi. Apply !M! Target. Gain !SP_G! SP."
+  },
+  "leacrosscode:ShockJolt" : {
+    "NAME" : "Shock Jolt !",
+    "DESCRIPTION" : "Deal !D! damage to ALL ennemis. Apply !M! Jolt to everyone."
+  }
+}

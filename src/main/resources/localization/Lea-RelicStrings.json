@@ -1,0 +1,9 @@
+{
+  "SpheromancerHeart": {
+    "NAME": "Spheromancer Heart",
+    "FLAVOR": "The core of a spheromancer.",
+    "DESCRIPTIONS": [
+      "Give you 3SP at the start of each fight."
+    ]
+  }
+}
