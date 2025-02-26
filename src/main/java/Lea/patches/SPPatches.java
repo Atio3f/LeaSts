@@ -1,5 +1,7 @@
 package Lea.patches;
 
+import Lea.interfaces.SPHelper;
+import basemod.patches.com.megacrit.cardcrawl.cards.AbstractCard.CNCardTextColors;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -15,7 +17,7 @@ public class SPPatches {
     )
     public static class PreBattlePrep {
         public static void Prefix(AbstractPlayer __instance) {
-            QuestHelper.reset();
+            SPHelper.reset();
         }
     }
 
@@ -25,17 +27,20 @@ public class SPPatches {
     )
     public static class ShowQuests {
         @SpireInsertPatch(
-            locator = Locator.class
+            locator = CNCardTextColors.Locator.class
         )
         public static void Insert(AbstractDungeon __instance, SpriteBatch sb) {
             if (AbstractDungeon.rs == AbstractDungeon.RenderScene.NORMAL) {
-                if ( CardCrawlGame.isInARun() && AbstractDungeon.currMapNode != null && AbstractDungeon.getCurrRoom() != null && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT){
-) {
-                    if (!QuestHelper.quests.isEmpty()) {
-                        QuestHelper.render(sb);
-                    }
-                    if (FishingMod.activeBoard != null && FishingMod.activeBoard.shouldBeActive()) {
-                        FishingMod.activeBoard.render(sb);
+                if (CardCrawlGame.isInARun() && AbstractDungeon.currMapNode != null && AbstractDungeon.getCurrRoom() != null && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {
+                    {
+                    /*
+                    if (!SPHelper.quests.isEmpty()) {
+                        SPHelper.render(sb);
+                    }*/
+
+                        if (AbstractDungeon.isPlayerInDungeon()) {  //Si le joueur est en donjon on affiche les barres élémentaires
+                            SPHelper.render(sb);
+                        }
                     }
                 }
             }

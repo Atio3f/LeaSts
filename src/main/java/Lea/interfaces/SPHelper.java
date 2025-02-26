@@ -23,7 +23,7 @@ public class SPHelper {
 
     //public static final Color QUEST_DUPE_BORDER_GLOW_COLOR = new Color(0.2F, 1F, 0.6F, 0.25F);
 
-    private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(makeID("QuestLog")); //A CHANGER
+    private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString("leacrosscode:QuestLog"); //A CHANGER
 
     static {
         for (int i = 0; i < 10; i++) {
@@ -43,6 +43,8 @@ public class SPHelper {
         );
         int xr = 0;
 
+        //Faut faire pour chaque élément plutôt
+        /*
         for (AbstractQuest q : quests) {
             FontHelper.renderFontLeft(
                 sb,
@@ -57,20 +59,14 @@ public class SPHelper {
             }
             xr++;
         }
+        */
 
         for (Hitbox h : boxes) {
             h.render(sb);
         }
     }
 
-    public static void acceptQuest(AbstractQuest quest) {
-        quests.add(quest);
-        playAcceptQuestSfx();
-        Hitbox box = boxes.get(quests.indexOf(quest));
-        float width = quest.textpadding() * Settings.scale + ((quest.goal * 40) * Settings.scale);
-        if (quest.questID.equals(TheGemSearch.ID)) width += (40 * Settings.scale);
-        box.resize(width, box.height);
-    }
+
 
     public static void playAcceptQuestSfx() {
         int roll = MathUtils.random(0, 2);
@@ -91,48 +87,27 @@ public class SPHelper {
         for (int i = 0; i < boxes.size(); i++) {
             boxes.get(i).update();
             if (boxes.get(i).hovered) {
-                if (i < quests.size()) {
+                /*
+                    if (i < quests.size()) {
                     ImageHelper.tipBoxAtMousePos(quests.get(i).getName(), quests.get(i).getDescription());
                 }
+
+                 */
             }
         }
     }
 
     public static void reset() {
-        quests = new ArrayList<>();
+        //quests = new ArrayList<>();
     }
 
-    public static void onSpendEnergy(int amount) {
-        for (AbstractQuest q : quests) {
-            q.onSpendEnergy(amount);
-        }
+
+    public static void onSpendingElementalSP(ArrayList<Integer> depenses) {
+        //Actualiser avec les nouvelles valeurs les affichages élémentaires et de SP
     }
 
-    public static void onCardPlayed(AbstractCard card) {
-        for (AbstractQuest q : quests) {
-            q.onPlayCard(card);
-        }
+    public static void onGainingElementalSP(ArrayList<Integer> gains){
+        //Actualiser avec les nouvelles valeurs les affichages élémentaires et de SP
     }
 
-    public static void onKillEnemy() {
-        for (AbstractQuest q : quests) {
-            q.onKillEnemy();
-        }
-    }
-
-    public static void atEndOfTurn() {
-        for (AbstractQuest q : quests) {
-            q.atEndOfTurn();
-        }
-    }
-
-    public static boolean hasQuest(String ID) {
-        return quests.stream().anyMatch(q -> q.questID.equals(ID));
-    }
-
-    public static void onGainBlock(int blockAmount) {
-        for (AbstractQuest q : quests) {
-            q.onGainBlock(blockAmount);
-        }
-    }
 }
