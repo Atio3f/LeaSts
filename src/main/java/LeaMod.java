@@ -8,6 +8,7 @@ import basemod.abstracts.CustomCard;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.RelicStrings;
@@ -169,7 +170,14 @@ public class LeaMod implements CharacterMod{
 
     @Override
     public void receivePostBattle(AbstractRoom abstractRoom) {
-
+        //Crash toujours
+        ArrayList<AbstractCard> rewardCards = AbstractDungeon.getRewardCards();
+        if (!rewardCards.isEmpty()) {
+            AbstractCard randomCard = rewardCards.get(AbstractDungeon.cardRng.random(rewardCards.size() - 1));
+        }else{
+            // Log un message d'erreur pour debug
+            System.out.println("Erreur: Aucun Reward Card disponible !");
+        }
     }
 
     @Override

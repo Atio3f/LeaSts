@@ -11,7 +11,9 @@ import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import javassist.CtBehavior;
 
 public class SPPatches {
-    @SpirePatch(
+
+    /*@SpirePatch(
+
         clz = AbstractPlayer.class,
         method = "preBattlePrep"
     )
@@ -33,10 +35,10 @@ public class SPPatches {
             if (AbstractDungeon.rs == AbstractDungeon.RenderScene.NORMAL) {
                 if (CardCrawlGame.isInARun() && AbstractDungeon.currMapNode != null && AbstractDungeon.getCurrRoom() != null && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {
                     {
-                    /*
-                    if (!SPHelper.quests.isEmpty()) {
-                        SPHelper.render(sb);
-                    }*/
+
+                    //if (!SPHelper.quests.isEmpty()) {
+                    //    SPHelper.render(sb);
+                    //}
 
                         if (AbstractDungeon.isPlayerInDungeon()) {  //Si le joueur est en donjon on affiche les barres élémentaires
                             SPHelper.render(sb);
@@ -53,5 +55,5 @@ public class SPPatches {
                 return LineFinder.findInOrder(ctMethodToPatch, finalMatcher);
             }
         }
-    }
+    }*/
 }
