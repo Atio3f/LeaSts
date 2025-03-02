@@ -1,6 +1,7 @@
 package Lea.powers;
 
 import Lea.Abstracts.CrosscodeDamageInfo;
+import Lea.characters.Lea;
 import Lea.enums.customEnums;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -17,7 +18,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import java.util.ArrayList;
 
 public class TargetPower extends AbstractPower {
-    public static final String POWER_ID = "TargetPower";
+    public static final String POWER_ID = "leacrosscode:TargetPower";
     public static final String NAME = "Target";
     public static final String[] DESCRIPTIONS = new String[] {
         "When hit by ",
@@ -49,9 +50,9 @@ public class TargetPower extends AbstractPower {
             this.justApplied = false;
         } else {
             if (this.amount == 0) {
-                this.addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, "TargetPower"));
+                this.addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, "leacrosscode:TargetPowers"));
             } else {
-                this.addToBot(new ReducePowerAction(this.owner, this.owner, "TargetPower", 1));
+                this.addToBot(new ReducePowerAction(this.owner, this.owner, "leacrosscode:TargetPower", 1));
             }
         }
     }
@@ -61,9 +62,10 @@ public class TargetPower extends AbstractPower {
     }
 
     public float atDamageReceive(float damage, DamageInfo.DamageType damageType, AbstractCard card) {
+        Lea.logger.info("TARGET atDamageReceive tags :" + card.tags);
         if (card.tags.contains(customEnums.BULLET)) {
+            Lea.logger.info("ça marche mais pas trop" + this.owner != null && !this.owner.isPlayer);
             return this.owner != null && !this.owner.isPlayer && AbstractDungeon.player.hasRelic("Paper Frog") ? damage + 3 : damage + 2;
-
         } else {
             return damage;
         }

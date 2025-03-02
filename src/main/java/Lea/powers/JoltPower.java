@@ -87,6 +87,7 @@ public class JoltPower  extends AbstractPower {
     public float atDamageReceive(float damage, DamageInfo.DamageType damageType, AbstractCard card) {
         LogManager.getLogger(Lea.class.getName()).info("MASTERCLASS");
         if (card.tags.contains(customEnums.SHOCK) && this.amount > 5) {
+            Lea.logger.info("DOUBLE DEGÂTS : "+ damage);
             return damage * 2;
 
         } else {

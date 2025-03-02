@@ -1,7 +1,10 @@
 package Lea.relics;
 
+import Lea.Abstracts.CrosscodeCharacter;
 import Lea.Abstracts.CrosscodeRelic;
 import com.badlogic.gdx.graphics.Texture;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+
 public class SpheromancerHeart extends CrosscodeRelic {
     private static Integer[] elements = new Integer[]{2, 2, 2, 2};
     public static final String ID = "SpheromancerHeart";
@@ -20,6 +23,15 @@ public class SpheromancerHeart extends CrosscodeRelic {
     }
 
 
+    @Override
+    public void atBattleStart() {
+        if(AbstractDungeon.player instanceof CrosscodeCharacter){
+            ((CrosscodeCharacter)AbstractDungeon.player).gainSP(3);
+            super.addElementsValue((CrosscodeCharacter)AbstractDungeon.player);
+        }else{
+            AbstractDungeon.player.increaseMaxHp(1, true);
+        }
+    }
 
     public void updateDescription() {
         this.description = DESCRIPTIONS[0] + DESCRIPTIONS[1];

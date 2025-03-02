@@ -16,6 +16,7 @@ import org.apache.logging.log4j.LogManager;
 public abstract class CrosscodeCharacter extends CustomPlayer {
 
     protected final int BASE_MAX_SP = 8;
+    protected int Max_SP;
     protected int SP_fight = 0;    //SP dans le fight actuel
     String[] elements = {"Heat", "Cold", "Shock", "Wave"};
     String[] elementsStatus = {"Burn", "Chill", "Jolt", "Mark"};
@@ -39,6 +40,7 @@ public abstract class CrosscodeCharacter extends CustomPlayer {
 
     public CrosscodeCharacter(String name, PlayerClass playerClass, String[] orbTextures, String orbVfxPath, float[] layerSpeeds, AbstractAnimation animation) {
         super(name, playerClass, orbTextures, orbVfxPath, layerSpeeds, animation);
+        Max_SP = BASE_MAX_SP;
     }
 
     public CrosscodeCharacter(String name, PlayerClass playerClass, EnergyOrbInterface energyOrbInterface, AbstractAnimation animation) {
@@ -84,7 +86,7 @@ public abstract class CrosscodeCharacter extends CustomPlayer {
         ///Partie Gain/Coût SP
         LogManager.getLogger(Lea.class.getName()).info("SP AVANT ATTAQUE " + SP_fight + " cout" + costSP);
         SP_fight -= costSP;
-        SP_fight += spGain;
+        gainSP(spGain);
         LogManager.getLogger(Lea.class.getName()).info("SP APRES ATTAQUE " + SP_fight);
         ///Partie Coût élément
         //Si le coût est trop élevé, on exhauste la carte et on subit des dégâts élémentaires(potentiellement??)
@@ -117,4 +119,13 @@ public abstract class CrosscodeCharacter extends CustomPlayer {
 
 
     }
+
+    public int getSP_fight(){
+        return SP_fight;
+    }
+
+    public void gainSP(int SP_gain){
+        SP_fight = ((SP_fight + SP_gain) > Max_SP) ? Max_SP : SP_fight + SP_gain;
+    }
+    
 }

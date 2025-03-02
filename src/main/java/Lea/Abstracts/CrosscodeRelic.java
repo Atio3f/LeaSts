@@ -36,7 +36,7 @@ public class CrosscodeRelic extends CustomRelic {
         LogManager.getLogger(Lea.class.getName()).info("ELEMENTS : " +  elementsValeurs[0] + " " + elementsValeurs[1]+" " + elementsValeurs[2] + " " + elementsValeurs[3]);
 
 
-        if(AbstractDungeon.player.getClass().getSuperclass().getSimpleName().equals("CrosscodeCharacter")){
+        if(AbstractDungeon.player instanceof CrosscodeCharacter){
             LogManager.getLogger(Lea.class.getName()).info("AJOUT ELEMENTS");
             addElementsValue((CrosscodeCharacter)AbstractDungeon.player);
             this.addToTop(new RelicAboveCreatureAction(AbstractDungeon.player, this));

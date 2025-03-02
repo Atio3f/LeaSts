@@ -31,5 +31,21 @@
   "leacrosscode:ShockJolt" : {
     "NAME" : "Shock Jolt !",
     "DESCRIPTION" : "Deal !D! damage to ALL ennemis. Apply !M! Jolt to everyone."
+  },
+  "leacrosscode:BoltDrink" : {
+    "NAME" : "Bolt Drink",
+    "DESCRIPTION" : "Innate. NL Ethereal. NL Gain !M! Max HP and draw !M! cards. Gain 1 Jolt. NL Exhaust."
+  },
+  "leacrosscode:Accumulation" : {
+    "NAME" : "Accumulation",
+    "DESCRIPTION" : "Draw !M! cards then discard up to !D! cards. Gain 1 SP for each card discarded."
+  },
+  "leacrosscode:StaticDash": {
+  "NAME": "Static Dash",
+  "DESCRIPTION": "Gain !B! Block. Draw !M! cards. Apply !J! Jolt to ALL ennemis."
+  },
+  "leacrosscode:BulletRain": {
+    "NAME": "Bullet Rain",
+    "DESCRIPTION": "Homing !M! projectiles (!D! damage each)."
   }
 }

@@ -11,5 +11,7 @@ public class AbstractCardEnum {
     public static AbstractCard.CardTarget FRONT;
     @SpireEnum
     public static AbstractCard.CardTarget FRONT_ALL;
+    @SpireEnum
+    public static AbstractCard.CardTarget HOMING;
 }
 

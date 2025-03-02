@@ -1,5 +1,6 @@
 package Lea.powers;
 
+import Lea.characters.Lea;
 import Lea.enums.customEnums;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -57,7 +58,7 @@ public class ProtectionPower extends AbstractPower {
                 this.owner, new VigorPower(this.owner, amountVigor), amountVigor, true, AbstractGameAction.AttackEffect.BLUNT_LIGHT));
 
         }
-        return damage;
+        return damageFinal;
     }
 
     @Override
