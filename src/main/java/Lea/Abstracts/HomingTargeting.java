@@ -19,7 +19,7 @@ public class HomingTargeting extends TargetingHandler<AbstractCreature>{
     }
     public static AbstractCreature getTarget() {
         AbstractCreature cible = null ;
-        if(hovered == null || hovered.isDeadOrEscaped())
+        if(hovered == null || hovered.isDeadOrEscaped() || !hovered.hasPower("leacrosscode:TargetPower"))
             for (AbstractCreature m : AbstractDungeon.getMonsters().monsters) {
                 if (!m.isDeadOrEscaped() && m.hasPower("leacrosscode:TargetPower")) {
                     cible = m;    //On marque le 1er ennemi encore en vie
@@ -30,13 +30,14 @@ public class HomingTargeting extends TargetingHandler<AbstractCreature>{
             Lea.logger.info("HOVERED TROUVE" + hovered);
             cible = hovered;
         }
-
+        hovered = cible;
         return cible;
     }
 
     @Override
     public void updateHovered() {
-        hovered = null;
+        //hovered = null;
+        /*
         AbstractDungeon.player.hb.update();
 
         for (AbstractMonster m : AbstractDungeon.getMonsters().monsters) {
@@ -48,6 +49,7 @@ public class HomingTargeting extends TargetingHandler<AbstractCreature>{
                 }
             }
         }
+        */
 
 
     }

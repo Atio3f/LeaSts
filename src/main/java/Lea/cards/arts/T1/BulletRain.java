@@ -31,7 +31,7 @@ public class BulletRain extends CrosscodeCard {
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String IMG_PATH = "img/Lea/cards/VPRCharge.png";        //IMAGE A CHANGER
     private static final int COST = 1;
-    private static final int ATTACK_DMG = 4;
+    private static final int ATTACK_DMG = 3;
     private static final int UPGRADE_PLUS_DMG = 0;
     private static final int SP_COST = 3;
     private static final int SP_GAIN = 0;
@@ -90,7 +90,7 @@ public class BulletRain extends CrosscodeCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeDamage(UPGRADE_PLUS_DMG);
+            //this.upgradeDamage(UPGRADE_PLUS_DMG);
             this.upgradeMagicNumber(UPGRAGE_PLUS_HITS);
         }
     }

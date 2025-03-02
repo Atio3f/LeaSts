@@ -25,13 +25,13 @@ public class SP_GAIN extends DynamicVariable {
 
     @Override
     public int value(AbstractCard card) {
-        return ((CrosscodeCard)card).BASESP_Gain;
+        return ((CrosscodeCard)card).getSP_Gain();
         // What the dynamic variable will be set to on your card. Usually uses some kind of int you store on your card.
     }
 
     @Override
     public int baseValue(AbstractCard card) {
-        return ((CrosscodeCard)card).getSP_Gain() ;
+        return ((CrosscodeCard)card).BASESP_Gain ;
         // Should generally just be the above.
     }
 

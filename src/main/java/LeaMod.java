@@ -145,6 +145,8 @@ public class LeaMod implements CharacterMod{
         BaseMod.addKeyword(new String[] {"burn", "burns", "burned", "Burn", "Burns", "Burned"}, "DESCRIPTION A AJOUTER");
         BaseMod.addKeyword(new String[] {"jolt", "jolts", "jolted", "Jolt", "Jolts", "Jolted"}, "DESCRIPTION A AJOUTER");
         BaseMod.addKeyword(new String[] {"mark", "marks", "marked", "Mark", "Marks", "Marked"}, "DESCRIPTION A AJOUTER");
+        BaseMod.addKeyword(new String[] {"Target", "target"}, "Increase damage taken by BULLET by 2. Can only be applied to 1 ennemy");
+        BaseMod.addKeyword(new String[] {"Homing", "homing", "homed"}, "Shot a projectile to a random ennemy if no ennemy is marked");
     }
 
     @Override
