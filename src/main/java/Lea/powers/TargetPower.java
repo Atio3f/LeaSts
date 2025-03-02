@@ -62,9 +62,7 @@ public class TargetPower extends AbstractPower {
     }
 
     public float atDamageReceive(float damage, DamageInfo.DamageType damageType, AbstractCard card) {
-        Lea.logger.info("TARGET atDamageReceive tags :" + card.tags);
         if (card.tags.contains(customEnums.BULLET)) {
-            Lea.logger.info("ça marche mais pas trop" + this.owner != null && !this.owner.isPlayer);
             return this.owner != null && !this.owner.isPlayer && AbstractDungeon.player.hasRelic("Paper Frog") ? damage + 3 : damage + 2;
         } else {
             return damage;
