@@ -22,9 +22,7 @@ public class TargetPower extends AbstractPower {
     public static final String POWER_ID = "leacrosscode:TargetPower";
     public static final String NAME = "Target";
     public static final String[] DESCRIPTIONS = new String[] {
-        "When hit by ",
-        " BULLET, take 2 more",
-        " damage."
+        "When hit by BULLET, take 2 more damage."
     };
 
     private boolean justApplied = false;
@@ -72,7 +70,7 @@ public class TargetPower extends AbstractPower {
 
     public float atDamageReceive(float damage, DamageInfo.DamageType damageType, AbstractCard card) {
         if (card.tags.contains(customEnums.BULLET)) {
-            return this.owner != null && !this.owner.isPlayer && AbstractDungeon.player.hasRelic("Paper Frog") ? damage + 3 : damage + 2;
+            return this.owner != null && !this.owner.isPlayer && AbstractDungeon.player.hasRelic("leacrosscode:PreciseFocus") ? damage + 3 : damage + 2;
         } else {
             return damage;
         }
@@ -80,7 +78,6 @@ public class TargetPower extends AbstractPower {
 
     @Override
     public void updateDescription() {
-        this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1] +
-            this.amount + DESCRIPTIONS[2];
+        this.description = DESCRIPTIONS[0];
     }
 }

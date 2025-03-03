@@ -23,11 +23,7 @@ public class JoltPower  extends AbstractPower {
     public static final String POWER_ID = "JoltPower";
     public static final String NAME = "Jolt";
     public static final String[] DESCRIPTIONS = new String[] {
-        "At the beginning of its turn, ",
-        " take 2 damage/stack. If stacks >",
-        " 5, double shock damage",
-        //" 20% actual HP, double shock damage",
-        "-33% par tour(min -2)"
+        "At the beginning of its turn, take 2 damage/stack. If stacks >5, double shock damage. -33% par tour(min -2)" //" 20% actual HP, double shock damage",
     };
     private AbstractCreature source = null;
 
@@ -97,8 +93,7 @@ public class JoltPower  extends AbstractPower {
 
     @Override
     public void updateDescription() {
-        this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1] +
-            DESCRIPTIONS[2] + DESCRIPTIONS[3];
+        this.description = DESCRIPTIONS[0];
     }
 
 }

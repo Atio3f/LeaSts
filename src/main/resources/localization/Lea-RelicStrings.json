@@ -5,5 +5,18 @@
     "DESCRIPTIONS": [
       "Give you 3SP at the start of each fight."
     ]
-  }
+  },
+  "leacrosscode:PreciseFocus": {
+    "NAME": "Precise focus",
+    "FLAVOR": "JSP",
+    "DESCRIPTIONS": [
+      "+1 Wave NL Enemies with Target takes one more damage from BULLETS."
+    ]
+  },"leacrosscode:MartialCounterAttack": {
+  "NAME": "Martial CounterAttack",
+  "FLAVOR": "JSP",
+  "DESCRIPTIONS": [
+    "+1 Cold NL You gain 1 Vigor for each damage reduced by Protection."
+  ]
+}
 }

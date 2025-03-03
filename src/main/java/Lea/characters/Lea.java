@@ -85,15 +85,18 @@ public class Lea extends CrosscodeCharacter {
     public ArrayList<String> getStartingDeck() { // starting deck 'nuff said
         logger.info("ENFIN8---------------------------------------------------------------------------------------------------------------------------------\n\n");
         ArrayList<String> cartes = new ArrayList<>();
-        cartes.add("Dash");
-        cartes.add("SpiritShield");
         cartes.add("leacrosscode:Hit");
         cartes.add("leacrosscode:Hit");
         cartes.add("leacrosscode:Hit");
         cartes.add("leacrosscode:Hit");
         cartes.add("leacrosscode:SphereSaw");
+        cartes.add("leacrosscode:VPRSpam");
         cartes.add("leacrosscode:Dash");
-        cartes.add("leacrosscode:TripleHits");//Temporaire juste pour tester à retirer quand y'aura le vrai deck final
+        cartes.add("leacrosscode:Dash");
+        cartes.add("leacrosscode:Block");
+        cartes.add("leacrosscode:Block");
+        cartes.add("leacrosscode:Block");
+        //cartes.add("leacrosscode:TripleHits");//Temporaire juste pour tester à retirer quand y'aura le vrai deck final
         System.out.println(cartes + "ENFIN9-----------------------------------------------------------------------------------------------------------------------------\n\n");
         return cartes;
     }

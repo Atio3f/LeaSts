@@ -42,10 +42,27 @@
   },
   "leacrosscode:StaticDash": {
   "NAME": "Static Dash",
-  "DESCRIPTION": "Gain !B! Block. Draw !M! cards. Apply !J! Jolt to ALL ennemis."
+  "DESCRIPTION": "Gain !B! Block. Draw !M! cards. Apply !J! Jolt to ALL ennemis. NL Exhaust."
   },
   "leacrosscode:BulletRain": {
     "NAME": "Bullet Rain",
-    "DESCRIPTION": "Homing !M! projectiles (!D! damage each)."
+    "DESCRIPTION": "Homing !M! bullets (!D! damage each)."
+  },
+  "leacrosscode:VPRSpam": {
+    "NAME": "VPR Spam",
+    "DESCRIPTION": "Homing !M! bullets (!D! damage each). Gain !SP_G! SP."
+  },
+  "leacrosscode:Block": {
+    "NAME": "Block",
+    "DESCRIPTION": "Gain !B! Block and !M! Protection."
+  },
+  "leacrosscode:LimitlessSpam": {
+    "NAME": "Limitless Spam",
+    "DESCRIPTION": "Each time you hit with a bullet, gain 1 temp Strength.",
+    "UPGRADE_DESCRIPTION": "Add a Bullet to your hand. NL Each time you hit with a bullet, gain 1 temp Strength."
+  },
+  "leacrosscode:Bullet": {
+    "NAME": "Bullet",
+    "DESCRIPTION": "Retain. NL Homing !M! bullet (!D! damage). NL Exhaust."
   }
 }

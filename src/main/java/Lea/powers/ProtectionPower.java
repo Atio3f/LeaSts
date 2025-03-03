@@ -18,12 +18,11 @@ public class ProtectionPower extends AbstractPower {
     public static final String POWER_ID = "ProtectionPower";
     public static final String NAME = "Protection";
     public static final String[] DESCRIPTIONS = new String[]{
-        "Reduce damage takes",
-        " by attacks per 1 + stacks."
+        "Reduce damage takes by attacks per !S!."   //!S! remplacé par stacks + 1 dans la fonction updateDescription
     };
 
     private boolean justApplied = false;
-    private static final float BASE_VALUE = 1; //Valeur de base de dégâts réduits sans compter le nombre de stacks
+    private static final int BASE_VALUE = 1; //Valeur de base de dégâts réduits sans compter le nombre de stacks
 
     public ProtectionPower(AbstractCreature owner, int amount) {
         this.name = NAME;
@@ -46,23 +45,34 @@ public class ProtectionPower extends AbstractPower {
     }
 
     public float atDamageReceive(float damage, DamageInfo.DamageType type) {
-        damage = damage > BASE_VALUE ? damage - (BASE_VALUE + amount) : 0;
+        //float damageFinal = damage > BASE_VALUE ? damage - (BASE_VALUE + amount) : 0;
+
+        //return damageFinal;
         return damage;
     }
 
     public float atDamageReceive(float damage, DamageInfo.DamageType damageType, AbstractCard card) {
-        float damageFinal = damage > (BASE_VALUE + amount) ? damage - (BASE_VALUE + amount) : 0;
-        if(this.owner != null && !this.owner.isPlayer && AbstractDungeon.player.hasRelic("Counter Playstyle")){
-            int amountVigor = (int) (damage - damageFinal); // Si le joueur a la relique Counter Playstyle, il gagne de la vigueur pour chaque dégât absorbé
+        //float damageFinal = damage > (BASE_VALUE + amount) ? damage - (BASE_VALUE + amount) : 0;
+
+        //return damageFinal;
+        return damage;
+    }
+
+    public int onAttacked(DamageInfo info, int damageAmount) {
+        float damageFinal = damageAmount > (BASE_VALUE + amount) ? damageAmount - (BASE_VALUE + amount) : 0;
+        if(this.owner != null && this.owner.isPlayer && AbstractDungeon.player.hasRelic("leacrosscode:MartialCounterAttack")){
+            int amountVigor = (int) (damageAmount - damageFinal); // Si le joueur a la relique Counter Playstyle, il gagne de la vigueur pour chaque dégât absorbé
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.owner,
                 this.owner, new VigorPower(this.owner, amountVigor), amountVigor, true, AbstractGameAction.AttackEffect.BLUNT_LIGHT));
 
         }
-        return damageFinal;
+        return damageAmount;
     }
 
     @Override
     public void updateDescription() {
-        this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1];
+
+        this.description = DESCRIPTIONS[0].replace("!S!", Integer.toString(this.amount + BASE_VALUE));
+
     }
 }

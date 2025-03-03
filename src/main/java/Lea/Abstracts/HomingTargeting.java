@@ -30,6 +30,7 @@ public class HomingTargeting extends TargetingHandler<AbstractCreature>{
             Lea.logger.info("HOVERED TROUVE" + hovered);
             cible = hovered;
         }
+        Lea.logger.info("CIBLE" + cible);
         hovered = cible;
         return cible;
     }

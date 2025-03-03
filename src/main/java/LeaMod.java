@@ -123,6 +123,10 @@ public class LeaMod implements CharacterMod{
         cards.add(new Accumulation());
         cards.add(new StaticDash());
         cards.add(new BulletRain());
+        cards.add(new VPRSpam());
+        cards.add(new BlockCard());
+        cards.add(new LimitlessSpam());
+        cards.add(new Bullet());
         for(CustomCard card : cards) {
 
             LeaCrosscode.logger.info("Ajout de "+card.cardID + "---------------------------------------------------------------------------------------------------------------------------------\n\n");
@@ -146,7 +150,7 @@ public class LeaMod implements CharacterMod{
         BaseMod.addKeyword(new String[] {"jolt", "jolts", "jolted", "Jolt", "Jolts", "Jolted"}, "DESCRIPTION A AJOUTER");
         BaseMod.addKeyword(new String[] {"mark", "marks", "marked", "Mark", "Marks", "Marked"}, "DESCRIPTION A AJOUTER");
         BaseMod.addKeyword(new String[] {"Target", "target"}, "Increase damage taken by BULLET by 2. Can only be applied to 1 ennemy");
-        BaseMod.addKeyword(new String[] {"Homing", "homing", "homed"}, "Shot a projectile to a random ennemy if no ennemy is marked");
+        BaseMod.addKeyword(new String[] {"Homing", "homing", "homed"}, "Shot a bullet to a random ennemy if no ennemy is marked");
     }
 
     @Override

@@ -38,7 +38,7 @@ public class SP_GAIN extends DynamicVariable {
     @Override
     public boolean upgraded(AbstractCard card) {
 
-        return ((CrosscodeCard) card).upgraded;
+        return ((CrosscodeCard) card).upgraded && this.isModified(card);
         // Should return true if the card was upgraded and the value was changed
     }
 
