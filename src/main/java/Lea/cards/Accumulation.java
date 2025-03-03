@@ -39,7 +39,7 @@ public class Accumulation extends CrosscodeCard {
     public Accumulation() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
             AbstractCard.CardType.SKILL, AbstractCardEnum.LEA_COBALT,
-            CardRarity.UNCOMMON, AbstractCardEnum.FRONT, SP_COST, SP_GAIN);
+            CardRarity.UNCOMMON, CardTarget.SELF, SP_COST, SP_GAIN);
         logger.info("Accumulation" + DESCRIPTION + "---------------------------------------------------------------------------------------------------------------------------------\n\n");
         this.magicNumber = this.baseMagicNumber = CARD_DRAW;
         this.initializeDescription();

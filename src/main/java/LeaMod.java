@@ -1,7 +1,9 @@
 import Lea.cards.*;
 import Lea.cards.arts.T1.BulletRain;
 import Lea.cards.arts.T1.SphereSaw;
+import Lea.cards.arts.T2.AmberBreaker;
 import Lea.cards.consumables.BoltDrink;
+import Lea.cards.words.Bye;
 import Lea.cards.words.Wait;
 import Lea.patches.AbstractCardEnum;
 import Lea.relics.SpheromancerHeart;
@@ -127,6 +129,10 @@ public class LeaMod implements CharacterMod{
         cards.add(new BlockCard());
         cards.add(new LimitlessSpam());
         cards.add(new Bullet());
+        cards.add(new Flashback());
+        cards.add(new Bye());
+        cards.add(new EnergyConversion());
+        cards.add(new AmberBreaker());
         for(CustomCard card : cards) {
 
             LeaCrosscode.logger.info("Ajout de "+card.cardID + "---------------------------------------------------------------------------------------------------------------------------------\n\n");

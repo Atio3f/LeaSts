@@ -13,8 +13,8 @@ import com.megacrit.cardcrawl.powers.LoseStrengthPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 
 public class LimitlessSpamPower  extends AbstractPower {
-    public static final String POWER_ID = "BurnPower";
-    public static final String NAME = "Burn";
+    public static final String POWER_ID = "LimitlessSpamPower";
+    public static final String NAME = "Limitless Spam";
     public static final String[] DESCRIPTIONS = new String[] {
         "Each time you hit with a bullet, gain ",
         " temp Strength."
@@ -61,18 +61,22 @@ public class LimitlessSpamPower  extends AbstractPower {
     public int onAttackToChangeDamage(DamageInfo info, int damageAmount) {
         if (info.owner != null && info.owner.isPlayer && AbstractDungeon.player.cardInUse != null) {
             lastCardUsed = AbstractDungeon.player.cardInUse;  // Stocke la carte utilisée
-            Lea.logger.info("nouvelle cible : "+lastCardUsed);
+            addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new StrengthPower(AbstractDungeon.player, amount)));
+            addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new LoseStrengthPower(AbstractDungeon.player, amount)));
         }
         return damageAmount;
     }
+    /* NE MARCHAIT PAS
     @Override
     public void onInflictDamage(DamageInfo info, int damageAmount, AbstractCreature target) {
-        Lea.logger.info("Cible pouvoir : "+lastCardUsed+"------------------");
-        if (info.owner != null && info.owner.isPlayer && lastCardUsed != null && lastCardUsed.tags.contains(customEnums.BULLET)) {
-            addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new StrengthPower(AbstractDungeon.player, amount)));
+        Lea.logger.info("Carte par pouvoir : "+lastCardUsed+"------------------" +  AbstractDungeon.player.cardInUse);
+
+        if (info.owner != null && info.owner.isPlayer && AbstractDungeon.player.cardInUse != null && AbstractDungeon.player.cardInUse.tags.contains(customEnums.BULLET)) {
+            Lea.logger.info("BLABLABLA : "+AbstractDungeon.player.cardInUse+"------------------" + " AMOUNT : "+this.amount);
+            addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new StrengthPower(AbstractDungeon.player, amount)));
             addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new LoseStrengthPower(AbstractDungeon.player, amount)));
         }
-    }
+    }*/
 
 
 

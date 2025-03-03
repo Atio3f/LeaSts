@@ -36,7 +36,7 @@ public class HitAndBlock extends CrosscodeCard {
     private static final int COST = 1;
     private static final int ATTACK_DMG = 7;
     private static final int UPGRADE_PLUS_DMG = 3;
-    private static final int PROT_VALUE = 1;
+    private static final int PROT_VALUE = 2;
     private static final int UPGRADE_PLUS_PROT = 1;
     private static final int SP_COST = 0;
     private static final int SP_GAIN = 1;

@@ -3,7 +3,7 @@
     "NAME": "Spheromancer Heart",
     "FLAVOR": "The core of a spheromancer.",
     "DESCRIPTIONS": [
-      "Give you 3SP at the start of each fight."
+      "Give you 3SP at the start of each fight. NL +2 of each element."
     ]
   },
   "leacrosscode:PreciseFocus": {
@@ -12,11 +12,18 @@
     "DESCRIPTIONS": [
       "+1 Wave NL Enemies with Target takes one more damage from BULLETS."
     ]
-  },"leacrosscode:MartialCounterAttack": {
-  "NAME": "Martial CounterAttack",
-  "FLAVOR": "JSP",
-  "DESCRIPTIONS": [
-    "+1 Cold NL You gain 1 Vigor for each damage reduced by Protection."
+},"leacrosscode:MartialCounterAttack": {
+    "NAME": "Martial CounterAttack",
+    "FLAVOR": "JSP",
+    "DESCRIPTIONS": [
+      "+1 Cold NL You gain 1 Vigor for each damage reduced by Protection."
   ]
-}
+},"leacrosscode:ConductiveRock": {
+    "NAME": "Conductive Rock",
+    "FLAVOR": "JSP",
+    "DESCRIPTIONS": [
+      "+5 Shock -2 Wave NL Apply double jolt stacks on ennemies"
+    ]
+  }
+
 }

@@ -52,10 +52,10 @@ public class ProtectionPower extends AbstractPower {
     }
 
     public float atDamageReceive(float damage, DamageInfo.DamageType damageType, AbstractCard card) {
-        //float damageFinal = damage > (BASE_VALUE + amount) ? damage - (BASE_VALUE + amount) : 0;
+        float damageFinal = damage > (BASE_VALUE + amount) ? damage - (BASE_VALUE + amount) : 0;
 
-        //return damageFinal;
-        return damage;
+        return damageFinal;
+        //return damage;
     }
 
     public int onAttacked(DamageInfo info, int damageAmount) {

@@ -64,5 +64,21 @@
   "leacrosscode:Bullet": {
     "NAME": "Bullet",
     "DESCRIPTION": "Retain. NL Homing !M! bullet (!D! damage). NL Exhaust."
+  },
+  "leacrosscode:Flashback": {
+    "NAME": "Flashback",
+    "DESCRIPTION": "Ethereal. NL Put !M! card from your discard into your hand. It cost 1 less this combat. NL Exhaust."
+  },
+  "leacrosscode:Bye": {
+    "NAME": "Bye",
+    "DESCRIPTION": "Next turn, gain X+1 SP and X+1 strength. NL End your turn."
+  },
+  "leacrosscode:EnergyConversion": {
+    "NAME": "Energy Conversion",
+    "DESCRIPTION": "Convert 3 SP into [E] [E]. NL Exhaustive !stslib:ex!."
+  },
+  "leacrosscode:AmberBreaker": {
+    "NAME": "Amber Breaker",
+    "DESCRIPTION": "Deal !D! x!M! damage and apply 2x!M! Jolt to the front ennemi."
   }
 }

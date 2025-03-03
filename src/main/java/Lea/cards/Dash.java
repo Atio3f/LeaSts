@@ -38,7 +38,7 @@ public class Dash extends CrosscodeCard {
     public Dash() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
             AbstractCard.CardType.SKILL, AbstractCardEnum.LEA_COBALT,
-            CardRarity.BASIC, AbstractCardEnum.FRONT, SP_COST, SP_GAIN);
+            CardRarity.BASIC, CardTarget.SELF, SP_COST, SP_GAIN);
         logger.info("Dash" + DESCRIPTION + "---------------------------------------------------------------------------------------------------------------------------------\n\n");
         this.magicNumber = this.baseMagicNumber = CARD_DRAW;
         this.baseBlock = BLOCK_VALUE;

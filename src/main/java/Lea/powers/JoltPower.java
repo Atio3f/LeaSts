@@ -35,7 +35,13 @@ public class JoltPower  extends AbstractPower {
         this.ID = POWER_ID;
         this.owner = owner;
         this.source = source;
-        this.amount = amount;
+
+        if(this.owner != null && !this.owner.isPlayer && this.source != null && this.source.isPlayer && AbstractDungeon.player.hasRelic("leacrosscode:ConductiveRock")){
+            Lea.logger.info("PAS MALLLLLLLL ConductiveRock marche -------------------------------");
+            this.amount = amount  * 2;
+        }else{
+            this.amount = amount;
+        }
         updateDescription();
         this.type = PowerType.DEBUFF;
         this.isTurnBased = true;
@@ -81,11 +87,9 @@ public class JoltPower  extends AbstractPower {
 
     @Override
     public float atDamageReceive(float damage, DamageInfo.DamageType damageType, AbstractCard card) {
-        LogManager.getLogger(Lea.class.getName()).info("MASTERCLASS");
         if (card.tags.contains(customEnums.SHOCK) && this.amount > 5) {
             Lea.logger.info("DOUBLE DEGÂTS : "+ damage);
             return damage * 2;
-
         } else {
             return damage;
         }

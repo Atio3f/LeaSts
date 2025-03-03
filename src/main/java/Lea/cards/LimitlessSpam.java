@@ -41,7 +41,7 @@ public class LimitlessSpam extends CrosscodeCard {
     public LimitlessSpam() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
             AbstractCard.CardType.POWER, AbstractCardEnum.LEA_COBALT,
-            CardRarity.UNCOMMON, AbstractCardEnum.FRONT, SP_COST, SP_GAIN); //Peut être légendaire
+            CardRarity.UNCOMMON, CardTarget.SELF, SP_COST, SP_GAIN); //Peut être légendaire
         logger.info("LimitlessSpam" + DESCRIPTION + "---------------------------------------------------------------------------------------------------------------------------------\n\n");
         magicNumber = baseMagicNumber = TEMP_STRENGTH;
         tags.add(customEnums.NEUTRAL);
@@ -51,7 +51,7 @@ public class LimitlessSpam extends CrosscodeCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new LimitlessSpamPower(p, p, TEMP_STRENGTH), this.magicNumber, true, AbstractGameAction.AttackEffect.NONE));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new LimitlessSpamPower(p, p, this.magicNumber), this.magicNumber, true, AbstractGameAction.AttackEffect.NONE));
         if(this.upgraded){
             //Ajoute un BULLET dans la main quand upgrade
             Bullet b = new Bullet();
