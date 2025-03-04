@@ -39,8 +39,8 @@ public class SpinDance extends CrosscodeCard {
     public SpinDance() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
             AbstractCard.CardType.ATTACK, AbstractCardEnum.LEA_COBALT,
-            CardRarity.BASIC, CardTarget.ALL, SP_COST, SP_GAIN);
-        logger.info("HIT" + DESCRIPTION + "---------------------------------------------------------------------------------------------------------------------------------\n\n");
+            CardRarity.COMMON, CardTarget.ALL, SP_COST, SP_GAIN);
+        logger.info("SpinDance" + DESCRIPTION + "---------------------------------------------------------------------------------------------------------------------------------\n\n");
         this.damage=this.baseDamage = ATTACK_DMG;
         this.isMultiDamage = true;
         tags.add(CardTags.STRIKE); //This tag marks it as a Strike card for the purposes of Perfected Strike and any similar modded effects

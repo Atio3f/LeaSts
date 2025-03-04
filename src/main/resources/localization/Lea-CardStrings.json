@@ -83,6 +83,6 @@
   },
   "leacrosscode:SpinDance": {
     "NAME": "Spin Dance",
-    "DESCRIPTION": "Deal !D! damage to ALL ennemies."
+    "DESCRIPTION": "Deal !D! damage to ALL ennemies. Gain !SP_G! SP."
   }
 }
