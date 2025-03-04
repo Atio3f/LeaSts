@@ -95,7 +95,6 @@ public class CrosscodeDiscardPileToHandAction extends AbstractGameAction {
 
                     while(var5.hasNext()) {
                         c = (AbstractCard)var5.next();
-                        Lea.logger.info("BOUCLE :  "+ c.cost +" amount : "+amount  );
 
                         if (this.player.hand.size() < 10) {
                             this.player.hand.addToHand(c);
@@ -103,9 +102,7 @@ public class CrosscodeDiscardPileToHandAction extends AbstractGameAction {
                                 if(this.tempCostChange){
                                     c.setCostForTurn(this.newCost);
                                 }else{
-                                    Lea.logger.info("PROBLEME DE PRIX SUREMEBT " + c.cost + costChange + " costChange : " + costChange + " cost"+c.cost);
-                                    c.modifyCostForCombat(c.cost + costChange);
-                                    Lea.logger.info(c.cost);
+                                    c.modifyCostForCombat(costChange);
                                 }
                             }
 
@@ -147,10 +144,9 @@ public class CrosscodeDiscardPileToHandAction extends AbstractGameAction {
                         this.player.hand.addToHand(c);
                         if (this.setCost) {
                             if(this.tempCostChange){
-                                Lea.logger.info("PROBLEME DE PRIX SUREMEBT 2"  + c.cost + costChange + " costChange : " + costChange + " cost"+c.cost);
                                 c.setCostForTurn(this.newCost);
                             }else{
-                                c.modifyCostForCombat(c.cost + costChange);
+                                c.modifyCostForCombat(costChange);
                             }
                         }
 

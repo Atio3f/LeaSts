@@ -80,5 +80,9 @@
   "leacrosscode:AmberBreaker": {
     "NAME": "Amber Breaker",
     "DESCRIPTION": "Deal !D! x!M! damage and apply 2x!M! Jolt to the front ennemi."
+  },
+  "leacrosscode:SpinDance": {
+    "NAME": "Spin Dance",
+    "DESCRIPTION": "Deal !D! damage to ALL ennemies."
   }
 }

@@ -46,6 +46,7 @@ public class BlockCard extends CrosscodeCard {
         this.magicNumber = this.baseMagicNumber = PROT_VALUE;
         tags.add(customEnums.NEUTRAL);
         tags.add(customEnums.SHIELD);
+        tags.add(CardTags.STARTER_DEFEND);
     }
 
     @Override

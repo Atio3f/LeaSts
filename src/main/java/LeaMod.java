@@ -133,6 +133,7 @@ public class LeaMod implements CharacterMod{
         cards.add(new Bye());
         cards.add(new EnergyConversion());
         cards.add(new AmberBreaker());
+        cards.add(new SpinDance());
         for(CustomCard card : cards) {
 
             LeaCrosscode.logger.info("Ajout de "+card.cardID + "---------------------------------------------------------------------------------------------------------------------------------\n\n");

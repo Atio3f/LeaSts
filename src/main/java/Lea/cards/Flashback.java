@@ -35,7 +35,7 @@ public class Flashback extends CrosscodeCard {
     public Flashback() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
             AbstractCard.CardType.SKILL, AbstractCardEnum.LEA_COBALT,
-            CardRarity.UNCOMMON,CardTarget.SELF, SP_COST, SP_GAIN);
+            CardRarity.RARE,CardTarget.SELF, SP_COST, SP_GAIN);
         logger.info("Flashback" + DESCRIPTION + "---------------------------------------------------------------------------------------------------------------------------------\n\n");
         this.magicNumber = this.baseMagicNumber = CARD_DRAW;
 
@@ -48,7 +48,7 @@ public class Flashback extends CrosscodeCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new CrosscodeDiscardPileToHandAction(this.magicNumber, -1, false));   //Il manque la partie où elle perd en coût
+        AbstractDungeon.actionManager.addToBottom(new CrosscodeDiscardPileToHandAction(this.magicNumber, -1, -1, false));   //Il manque la partie où elle perd en coût
 
         super.use(p, m);
     }

@@ -45,10 +45,9 @@ public class ProtectionPower extends AbstractPower {
     }
 
     public float atDamageReceive(float damage, DamageInfo.DamageType type) {
-        //float damageFinal = damage > BASE_VALUE ? damage - (BASE_VALUE + amount) : 0;
+        float damageFinal = damage > (BASE_VALUE + amount) ? damage - (BASE_VALUE + amount) : 0;
 
-        //return damageFinal;
-        return damage;
+        return damageFinal;
     }
 
     public float atDamageReceive(float damage, DamageInfo.DamageType damageType, AbstractCard card) {
@@ -59,14 +58,14 @@ public class ProtectionPower extends AbstractPower {
     }
 
     public int onAttacked(DamageInfo info, int damageAmount) {
-        float damageFinal = damageAmount > (BASE_VALUE + amount) ? damageAmount - (BASE_VALUE + amount) : 0;
+        int damageFinal = damageAmount > (BASE_VALUE + amount) ? damageAmount - (BASE_VALUE + amount) : 0;
         if(this.owner != null && this.owner.isPlayer && AbstractDungeon.player.hasRelic("leacrosscode:MartialCounterAttack")){
             int amountVigor = (int) (damageAmount - damageFinal); // Si le joueur a la relique Counter Playstyle, il gagne de la vigueur pour chaque dégât absorbé
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.owner,
                 this.owner, new VigorPower(this.owner, amountVigor), amountVigor, true, AbstractGameAction.AttackEffect.BLUNT_LIGHT));
 
         }
-        return damageAmount;
+        return damageFinal;
     }
 
     @Override
