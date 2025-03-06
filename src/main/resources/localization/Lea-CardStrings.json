@@ -84,5 +84,9 @@
   "leacrosscode:SpinDance": {
     "NAME": "Spin Dance",
     "DESCRIPTION": "Deal !D! damage to ALL ennemies. Gain !SP_G! SP."
+  },
+  "leacrosscode:HedgehagFarming": {
+    "NAME": "Hedgehag Farming",
+    "DESCRIPTION": "Permanently upgrade 2 times a card in your hand and remove this from your deck permanently. NL Exhaust."
   }
 }
