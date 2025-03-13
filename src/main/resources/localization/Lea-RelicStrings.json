@@ -24,6 +24,12 @@
     "DESCRIPTIONS": [
       "+5 Shock -2 Wave NL Apply double jolt stacks on ennemies"
     ]
-  }
+  },"leacrosscode:TurtleShell": {
+  "NAME": "Turtle Shell",
+  "FLAVOR": "JSP",
+  "DESCRIPTIONS": [
+    "+1 Ice NL Each combat, gain 2 Protection during the 2 first turn."
+  ]
+}
 
 }

@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
+import com.megacrit.cardcrawl.actions.watcher.PressEndTurnButtonAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -17,6 +18,8 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.DrawCardNextTurnPower;
+import com.megacrit.cardcrawl.powers.GainStrengthPower;
+import com.megacrit.cardcrawl.powers.LoseStrengthPower;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 import com.megacrit.cardcrawl.vfx.combat.CleaveEffect;
 import com.megacrit.cardcrawl.vfx.combat.WhirlwindEffect;
@@ -68,16 +71,20 @@ public class Bye extends CrosscodeCard {
 
 
         if(upgraded){
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DrawCardNextTurnPower(p, effect * 2 != 0 ? effect * 2 : 1)));  //Condition ternaire parce que le minimum de cartes piochées est 1.
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new GainSPNextTurnPower(p, effect + 2)));
+            AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(p, p, new GainSPNextTurnPower(p, effect + 2)));
+            //AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(p, p, new DrawCardNextTurnPower(p, effect * 2 != 0 ? effect * 2 : 1)));  //Condition ternaire parce que le minimum de cartes piochées est 1.
+            AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(p, p, new GainStrengthPower(p, effect * 2 != 0 ? effect * 2 : 1)));  //Condition ternaire parce que le minimum de cartes piochées est 1.
+            AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(p, p, new LoseStrengthPower(p, effect * 2 != 0 ? effect * 2 : 1)));  //Condition ternaire parce que le minimum de cartes piochées est 1.
         }else{
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DrawCardNextTurnPower(p, effect + 1)));
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new GainSPNextTurnPower(p, effect + 1)));
+            AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(p, p, new GainSPNextTurnPower(p, effect + 1)));
+            AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(p, p, new GainStrengthPower(p, effect * 2 != 0 ? effect * 2 : 1)));  //Condition ternaire parce que le minimum de cartes piochées est 1.
+            AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(p, p, new LoseStrengthPower(p, effect * 2 != 0 ? effect * 2 : 1)));  //Condition ternaire parce que le minimum de cartes piochées est 1.
+
         }
         if (!this.freeToPlayOnce) {
             p.energy.use(EnergyPanel.totalCount);
         }
-        AbstractDungeon.actionManager.addToBottom(new EndTurnAction());
+        AbstractDungeon.actionManager.addToBottom(new PressEndTurnButtonAction());
         super.use(p, m);
     }
 
@@ -97,6 +104,8 @@ public class Bye extends CrosscodeCard {
         if (!this.upgraded) {
             this.upgradeName();
             this.upgradeMagicNumber(UPGRADE_PLUS_CARD);
+            this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
+            this.initializeDescription();
         }
     }
 }

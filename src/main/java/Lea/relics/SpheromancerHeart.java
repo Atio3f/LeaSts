@@ -15,6 +15,7 @@ public class SpheromancerHeart extends CrosscodeRelic {
     // Get object containing the strings that are displayed in the game.
     public static final String NAME = relicStrings.NAME;
     public static final String DESCRIPTION = relicStrings.DESCRIPTIONS[0];
+    public static final String FLAVOR = relicStrings.FLAVOR;
 
     /*public static final String[] DESCRIPTIONS = new String[] {
         "Give you 3SP at the start of each fight.",
@@ -26,7 +27,7 @@ public class SpheromancerHeart extends CrosscodeRelic {
         super(ID, new Texture("img/Lea/relics/SpheromancerHeart.png"),
             RelicTier.STARTER, LandingSound.CLINK, elements);
         this.description = DESCRIPTION;
-
+        this.flavorText = FLAVOR;
     }
 
 

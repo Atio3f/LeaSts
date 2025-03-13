@@ -3,10 +3,7 @@ import Lea.characters.Lea;
 import Lea.patches.AbstractCardEnum;
 import Lea.patches.LeaEnum;
 import Lea.patches.SP_GAIN;
-import Lea.relics.ConductiveRock;
-import Lea.relics.MartialCounterAttack;
-import Lea.relics.PreciseFocus;
-import Lea.relics.SpheromancerHeart;
+import Lea.relics.*;
 import basemod.AutoAdd;
 import basemod.interfaces.*;
 import com.badlogic.gdx.graphics.Texture;
@@ -117,6 +114,7 @@ public class LeaCrosscode implements
         BaseMod.addRelicToCustomPool(new PreciseFocus(), AbstractCardEnum.LEA_COBALT);
         BaseMod.addRelicToCustomPool(new MartialCounterAttack(), AbstractCardEnum.LEA_COBALT);
         BaseMod.addRelicToCustomPool(new ConductiveRock(), AbstractCardEnum.LEA_COBALT);
+        BaseMod.addRelicToCustomPool(new TurtleShell(), AbstractCardEnum.LEA_COBALT);
 
         /*for(EditCardsSubscriber perso : persos) {
             perso.receiveEditRelics();

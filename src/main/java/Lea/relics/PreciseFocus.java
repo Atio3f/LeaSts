@@ -14,9 +14,13 @@ public class PreciseFocus extends CrosscodeRelic {
     // Get object containing the strings that are displayed in the game.
     public static final String NAME = relicStrings.NAME;
     public static final String DESCRIPTION = relicStrings.DESCRIPTIONS[0];
+    public static final String FLAVOR = relicStrings.FLAVOR;
+
     public PreciseFocus(){
         super(ID, new Texture("img/Lea/relics/SpheromancerHeart.png" ),//IMAGE A CHANGER Changer pour FocusSenses plus tard
             RelicTier.COMMON, LandingSound.MAGICAL, elements);
         this.description = DESCRIPTION;
+        this.flavorText = FLAVOR;
+
     }
 }

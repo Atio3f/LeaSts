@@ -14,9 +14,12 @@ public class ConductiveRock  extends CrosscodeRelic {
     // Get object containing the strings that are displayed in the game.
     public static final String NAME = relicStrings.NAME;
     public static final String DESCRIPTION = relicStrings.DESCRIPTIONS[0];
+    public static final String FLAVOR = relicStrings.FLAVOR;
+
     public ConductiveRock(){
         super(ID, new Texture("img/Lea/relics/SpheromancerHeart.png" ),//IMAGE A CHANGER
             RelicTier.RARE, LandingSound.MAGICAL, elements);    //Peut être Relique de boss carrément
         this.description = DESCRIPTION;
+        this.flavorText = FLAVOR;
     }
 }

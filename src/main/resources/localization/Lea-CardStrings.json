@@ -71,7 +71,8 @@
   },
   "leacrosscode:Bye": {
     "NAME": "Bye",
-    "DESCRIPTION": "Next turn, gain X+1 SP and X+1 strength. NL End your turn."
+    "DESCRIPTION": "Next turn, gain X+1 SP and X+1 strength. NL End your turn.(prob par rapport à l'effet réel de la carte)",
+    "UPGRADE_DESCRIPTION" : "Next turn, gain X+2 SP and 2X strength. NL End your turn."
   },
   "leacrosscode:EnergyConversion": {
     "NAME": "Energy Conversion",
@@ -88,5 +89,11 @@
   "leacrosscode:HedgehagFarming": {
     "NAME": "Hedgehag Farming",
     "DESCRIPTION": "Permanently upgrade 2 times a card in your hand and remove this from your deck permanently. NL Exhaust."
-  }
+  },"leacrosscode:CheckWeaknesses": {
+  "NAME": "Check Weaknesses",
+  "DESCRIPTION": "Apply !M! Vulnerable and !M! breakers."
+},"leacrosscode:RockSmash": {
+  "NAME": "Rock Smash",
+  "DESCRIPTION": "Gain !B! block. Deal !D! damage to the front ennemi. Vigor also affect block gain. NL Gain !SP_G! SP."
+}
 }

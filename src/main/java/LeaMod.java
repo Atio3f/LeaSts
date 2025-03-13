@@ -6,7 +6,7 @@ import Lea.cards.consumables.BoltDrink;
 import Lea.cards.words.Bye;
 import Lea.cards.words.Wait;
 import Lea.patches.AbstractCardEnum;
-import Lea.relics.SpheromancerHeart;
+import Lea.relics.*;
 import basemod.BaseMod;
 import basemod.abstracts.CustomCard;
 import com.badlogic.gdx.Gdx;
@@ -135,6 +135,9 @@ public class LeaMod implements CharacterMod{
         cards.add(new AmberBreaker());
         cards.add(new SpinDance());
         cards.add(new HedgehagFarming());
+        cards.add(new CheckWeaknesses());
+        cards.add(new RockSmash());
+
         for(CustomCard card : cards) {
 
             LeaCrosscode.logger.info("Ajout de "+card.cardID + "---------------------------------------------------------------------------------------------------------------------------------\n\n");
@@ -163,7 +166,12 @@ public class LeaMod implements CharacterMod{
 
     @Override
     public void receiveEditRelics() {
-        //BaseMod.addRelicToCustomPool(new SpheromancerHeart(), AbstractCardEnum.LEA_COBALT);
+        BaseMod.addRelicToCustomPool(new SpheromancerHeart(), AbstractCardEnum.LEA_COBALT);
+        BaseMod.addRelicToCustomPool(new PreciseFocus(), AbstractCardEnum.LEA_COBALT);
+        BaseMod.addRelicToCustomPool(new MartialCounterAttack(), AbstractCardEnum.LEA_COBALT);
+        BaseMod.addRelicToCustomPool(new ConductiveRock(), AbstractCardEnum.LEA_COBALT);
+        BaseMod.addRelicToCustomPool(new TurtleShell(), AbstractCardEnum.LEA_COBALT);
+
     }
 
     @Override

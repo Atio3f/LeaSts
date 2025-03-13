@@ -45,15 +45,27 @@ public class ProtectionPower extends AbstractPower {
     }
 
     public float atDamageReceive(float damage, DamageInfo.DamageType type) {
-        float damageFinal = damage > (BASE_VALUE + amount) ? damage - (BASE_VALUE + amount) : 0;
+        float damageFinal = damage ;//> (BASE_VALUE + amount) ? damage - (BASE_VALUE + amount) : 0;
 
         return damageFinal;
     }
 
     public float atDamageReceive(float damage, DamageInfo.DamageType damageType, AbstractCard card) {
-        float damageFinal = damage > (BASE_VALUE + amount) ? damage - (BASE_VALUE + amount) : 0;
+        float damageFinal = damage ;//> (BASE_VALUE + amount) ? damage - (BASE_VALUE + amount) : 0;
 
         return damageFinal;
+        //return damage;
+    }
+
+    public float atDamageFinalReceive(float damage, DamageInfo.DamageType damageType, AbstractCard card) {
+        float damageFinal = damage > (BASE_VALUE + amount) ? damage - (BASE_VALUE + amount) : 0;
+        /*if(this.owner != null && this.owner.isPlayer && AbstractDungeon.player.hasRelic("leacrosscode:MartialCounterAttack")){
+            int amountVigor = (int) (damage - damageFinal); // Si le joueur a la relique Counter Playstyle, il gagne de la vigueur pour chaque dégât absorbé
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.owner,
+                this.owner, new VigorPower(this.owner, amountVigor), amountVigor, true, AbstractGameAction.AttackEffect.BLUNT_LIGHT));
+
+        }*/
+        return damage;
         //return damage;
     }
 
@@ -61,8 +73,11 @@ public class ProtectionPower extends AbstractPower {
         int damageFinal = damageAmount > (BASE_VALUE + amount) ? damageAmount - (BASE_VALUE + amount) : 0;
         if(this.owner != null && this.owner.isPlayer && AbstractDungeon.player.hasRelic("leacrosscode:MartialCounterAttack")){
             int amountVigor = (int) (damageAmount - damageFinal); // Si le joueur a la relique Counter Playstyle, il gagne de la vigueur pour chaque dégât absorbé
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.owner,
-                this.owner, new VigorPower(this.owner, amountVigor), amountVigor, true, AbstractGameAction.AttackEffect.BLUNT_LIGHT));
+            Lea.logger.info("DEGATS : "+ damageAmount + " FINAUX : "+damageFinal + " ; VIGUEUR : " + amountVigor);
+            if(amountVigor>0) {
+                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.owner,
+                    this.owner, new VigorPower(this.owner, amountVigor), amountVigor, true, AbstractGameAction.AttackEffect.BLUNT_LIGHT));
+            }
 
         }
         return damageFinal;
