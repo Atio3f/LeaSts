@@ -38,7 +38,7 @@ public class BoltDrink extends CrosscodeCard {
     public BoltDrink() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
             AbstractCard.CardType.SKILL, AbstractCardEnum.LEA_COBALT,
-            CardRarity.RARE, AbstractCardEnum.FRONT, SP_COST, SP_GAIN);
+            CardRarity.RARE, CardTarget.SELF, SP_COST, SP_GAIN);
         logger.info("BoltDrink" + DESCRIPTION + "---------------------------------------------------------------------------------------------------------------------------------\n\n");
         this.magicNumber = this.baseMagicNumber = this.STATS;
 

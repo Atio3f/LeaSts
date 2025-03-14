@@ -3,9 +3,11 @@ import Lea.characters.Lea;
 import Lea.patches.AbstractCardEnum;
 import Lea.patches.LeaEnum;
 import Lea.patches.SP_GAIN;
+import Lea.potions.PanicPotion;
 import Lea.relics.*;
 import basemod.AutoAdd;
 import basemod.interfaces.*;
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -23,7 +25,7 @@ import java.util.List;
 
 @SpireInitializer
 public class LeaCrosscode implements
-    EditCardsSubscriber, PostBattleSubscriber, PostDungeonInitializeSubscriber, EditRelicsSubscriber, EditCharactersSubscriber, EditStringsSubscriber, EditKeywordsSubscriber, PostPlayerUpdateSubscriber {
+    EditCardsSubscriber, PostBattleSubscriber, PostDungeonInitializeSubscriber, EditRelicsSubscriber, EditCharactersSubscriber, EditStringsSubscriber, EditKeywordsSubscriber, PostInitializeSubscriber {
 
     public static final Logger logger = LogManager.getLogger(LeaCrosscode.class.getName());
 
@@ -131,10 +133,19 @@ public class LeaCrosscode implements
         }
     }
 
-    @Override
+    /*@Override
     public void receivePostPlayerUpdate() {
         if(CardCrawlGame.isInARun() && AbstractDungeon.currMapNode != null && AbstractDungeon.getCurrRoom() != null && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT){
 
         }
+    }*/
+
+    @Override
+    public void receivePostInitialize() {
+        registerPotions();
+    }
+
+    public static void registerPotions() {
+            BaseMod.addPotion(PanicPotion.class, Lea.COBALT, Color.WHITE, Color.FIREBRICK, PanicPotion.POTION_ID, LeaEnum.LEA);
     }
 }

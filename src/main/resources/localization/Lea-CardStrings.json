@@ -34,7 +34,7 @@
   },
   "leacrosscode:BoltDrink" : {
     "NAME" : "Bolt Drink",
-    "DESCRIPTION" : "Innate. NL Ethereal. NL Gain !M! Max HP and draw !M! cards. Gain 1 Jolt. NL Exhaust."
+    "DESCRIPTION" : "Innate. NL Ethereal. NL Gain !M! Max HP and draw !M! card. Gain 1 Jolt. NL Exhaust."
   },
   "leacrosscode:Accumulation" : {
     "NAME" : "Accumulation",
@@ -95,5 +95,8 @@
 },"leacrosscode:RockSmash": {
   "NAME": "Rock Smash",
   "DESCRIPTION": "Gain !B! block. Deal !D! damage to the front ennemi. Vigor also affect block gain. NL Gain !SP_G! SP."
+},"leacrosscode:OverloadCooling" : {
+  "NAME": "Overload Cooling",
+  "DESCRIPTION": "Restore !M! points of each element. Gain 3 Vigor."
 }
 }

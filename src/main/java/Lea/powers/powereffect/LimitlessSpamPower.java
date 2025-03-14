@@ -1,7 +1,9 @@
 package Lea.powers.powereffect;
 
+import Lea.cards.Bullet;
 import Lea.characters.Lea;
 import Lea.enums.customEnums;
+import Lea.patches.LeaEnum;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -61,8 +63,10 @@ public class LimitlessSpamPower  extends AbstractPower {
     public int onAttackToChangeDamage(DamageInfo info, int damageAmount) {
         if (info.owner != null && info.owner.isPlayer && AbstractDungeon.player.cardInUse != null) {
             lastCardUsed = AbstractDungeon.player.cardInUse;  // Stocke la carte utilisée
-            addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new StrengthPower(AbstractDungeon.player, amount)));
-            addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new LoseStrengthPower(AbstractDungeon.player, amount)));
+            if(lastCardUsed.hasTag(customEnums.BULLET)){
+                addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new StrengthPower(AbstractDungeon.player, amount)));
+                addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new LoseStrengthPower(AbstractDungeon.player, amount)));
+            }
         }
         return damageAmount;
     }

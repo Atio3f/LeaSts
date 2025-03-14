@@ -96,7 +96,7 @@ public class Lea extends CrosscodeCharacter {
         cartes.add("leacrosscode:Block");
         cartes.add("leacrosscode:Block");
         cartes.add("leacrosscode:Block");
-        //cartes.add("leacrosscode:TripleHits");//Temporaire juste pour tester à retirer quand y'aura le vrai deck final
+        cartes.add("leacrosscode:OverloadCooling");
         System.out.println(cartes + "ENFIN9-----------------------------------------------------------------------------------------------------------------------------\n\n");
         return cartes;
     }

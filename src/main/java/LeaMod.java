@@ -137,6 +137,7 @@ public class LeaMod implements CharacterMod{
         cards.add(new HedgehagFarming());
         cards.add(new CheckWeaknesses());
         cards.add(new RockSmash());
+        cards.add(new OverloadCooling());
 
         for(CustomCard card : cards) {
 
@@ -162,6 +163,9 @@ public class LeaMod implements CharacterMod{
         BaseMod.addKeyword(new String[] {"mark", "marks", "marked", "Mark", "Marks", "Marked"}, "DESCRIPTION A AJOUTER");
         BaseMod.addKeyword(new String[] {"Target", "target"}, "Increase damage taken by BULLET by 2. Can only be applied to 1 ennemy");
         BaseMod.addKeyword(new String[] {"Homing", "homing", "homed"}, "Shot a bullet to a random ennemy if no ennemy is marked");
+
+        BaseMod.addKeyword(new String[] {"Limitless Spam"}, "Each time you hit with a bullet, gain 1 temp Strength.");
+
     }
 
     @Override
@@ -183,6 +187,9 @@ public class LeaMod implements CharacterMod{
         String cardStrings = Gdx.files.internal("localization/Lea-CardStrings.json").readString(String.valueOf(StandardCharsets.UTF_8));
         BaseMod.loadCustomStrings(CardStrings.class, cardStrings);
 
+        // PotionStrings
+        String potionStrings = Gdx.files.internal("localization/Lea-PotionStrings.json").readString(String.valueOf(StandardCharsets.UTF_8));
+        BaseMod.loadCustomStrings(RelicStrings.class, potionStrings);
         LeaCrosscode.logger.info("done editting strings");
     }
 
