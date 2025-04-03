@@ -43,8 +43,6 @@ public class Durian extends CrosscodeCard {
         this.magicNumber = this.baseMagicNumber = this.UTILISATIONS_MAX;
 
         this.exhaust = true;
-        this.isInnate = true;
-        this.isEthereal = true;
 
     }
 
@@ -53,7 +51,16 @@ public class Durian extends CrosscodeCard {
         this.addToBot(new HealAction(p, p, 8));
         this.addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, 2), 2));
 
-
+        this.magicNumber--;
+        if(this.magicNumber==0){
+            //SUPPRIMER DU JEU DANS CE CAS JE LAISSE POUR APRES
+            for (AbstractCard carteDeck : AbstractDungeon.player.masterDeck.group) {
+                if (carteDeck.uuid == this.uuid) {
+                    AbstractDungeon.player.masterDeck.removeCard(carteDeck);
+                    break;
+                }
+            }
+        }
         super.use(p, m);
     }
 

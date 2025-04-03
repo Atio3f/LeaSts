@@ -3,6 +3,7 @@ import Lea.cards.arts.T1.BulletRain;
 import Lea.cards.arts.T1.SphereSaw;
 import Lea.cards.arts.T2.AmberBreaker;
 import Lea.cards.consumables.BoltDrink;
+import Lea.cards.consumables.Durian;
 import Lea.cards.words.Bye;
 import Lea.cards.words.Wait;
 import Lea.patches.AbstractCardEnum;
@@ -138,6 +139,7 @@ public class LeaMod implements CharacterMod{
         cards.add(new CheckWeaknesses());
         cards.add(new RockSmash());
         cards.add(new OverloadCooling());
+        cards.add(new Durian());
 
         for(CustomCard card : cards) {
 

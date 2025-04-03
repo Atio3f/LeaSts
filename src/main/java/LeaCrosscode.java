@@ -4,6 +4,7 @@ import Lea.patches.AbstractCardEnum;
 import Lea.patches.LeaEnum;
 import Lea.patches.SP_GAIN;
 import Lea.potions.PanicPotion;
+import Lea.potions.ZapPotion;
 import Lea.relics.*;
 import basemod.AutoAdd;
 import basemod.interfaces.*;
@@ -147,5 +148,7 @@ public class LeaCrosscode implements
 
     public static void registerPotions() {
             BaseMod.addPotion(PanicPotion.class, Lea.COBALT, Color.WHITE, Color.FIREBRICK, PanicPotion.POTION_ID, LeaEnum.LEA);
+            BaseMod.addPotion(ZapPotion.class, Lea.COBALT, Color.VIOLET, Color.WHITE, ZapPotion.POTION_ID, LeaEnum.LEA);
+
     }
 }

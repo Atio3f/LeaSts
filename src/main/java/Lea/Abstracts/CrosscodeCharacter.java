@@ -11,6 +11,8 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.ui.panels.energyorb.EnergyOrbInterface;
 import org.apache.logging.log4j.LogManager;
 
+import java.util.ArrayList;
+
 
 //Permet de rajouter un nouveau gestionnaire de ressources (pour les SP des arts de combat)
 public abstract class CrosscodeCharacter extends CustomPlayer {
@@ -120,6 +122,11 @@ public abstract class CrosscodeCharacter extends CustomPlayer {
 
     }
 
+    public void gainElements(Integer[] elementsGain){
+        for(int i=0;i<4;i++){
+            elementsValeur[i] += elementsGain[i];
+        }
+    }
     public int getSP_fight(){
         return SP_fight;
     }
@@ -127,5 +134,5 @@ public abstract class CrosscodeCharacter extends CustomPlayer {
     public void gainSP(int SP_gain){
         SP_fight = ((SP_fight + SP_gain) > Max_SP) ? Max_SP : SP_fight + SP_gain;
     }
-    
+
 }

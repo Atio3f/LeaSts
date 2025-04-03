@@ -6,5 +6,12 @@
       " #yDash and #b",
       " #yBullet to your hand."
     ]
+  },
+  "leacrosscode:ZapPotion": {
+    "NAME": "Zap Potion(à changer)",
+    "DESCRIPTIONS": [
+      "Apply#b",
+      " #yJolt."
+    ]
   }
 }

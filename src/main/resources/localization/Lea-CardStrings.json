@@ -90,13 +90,16 @@
     "NAME": "Hedgehag Farming",
     "DESCRIPTION": "Permanently upgrade 2 times a card in your hand and remove this from your deck permanently. NL Exhaust."
   },"leacrosscode:CheckWeaknesses": {
-  "NAME": "Check Weaknesses",
-  "DESCRIPTION": "Apply !M! Vulnerable and !M! breakers."
-},"leacrosscode:RockSmash": {
-  "NAME": "Rock Smash",
-  "DESCRIPTION": "Gain !B! block. Deal !D! damage to the front ennemi. Vigor also affect block gain. NL Gain !SP_G! SP."
-},"leacrosscode:OverloadCooling" : {
-  "NAME": "Overload Cooling",
-  "DESCRIPTION": "Restore !M! points of each element. Gain 3 Vigor."
-}
+    "NAME": "Check Weaknesses",
+    "DESCRIPTION": "Apply !M! Vulnerable and !M! breakers."
+  },"leacrosscode:RockSmash": {
+    "NAME": "Rock Smash",
+    "DESCRIPTION": "Gain !B! block. Deal !D! damage to the front ennemi. Vigor also affect block gain. NL Gain !SP_G! SP."
+  },"leacrosscode:OverloadCooling" : {
+    "NAME": "Overload Cooling",
+    "DESCRIPTION": "Restore !M! points of each element. Gain 3 Vigor."
+  },"leacrosscode:Durian" : {
+    "NAME": "Overload Cooling",
+    "DESCRIPTION": "Heal 8 HP and gain 2 Strength. !M! uses before removing this from your deck permanently. NL Exhaust."
+  }
 }
