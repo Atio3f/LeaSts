@@ -116,7 +116,7 @@ public class Lea extends CrosscodeCharacter {
     public static final int MAX_HP = 80;
     public static final int ORB_SLOTS = 0;
     public static final int STARTING_GOLD = 99;
-    public static final int HAND_SIZE = 6;
+    public static final int HAND_SIZE = 5;
 
     @Override
     public CharSelectInfo getLoadout() { // the rest of the character loadout so includes your character select screen info plus hp and starting gold

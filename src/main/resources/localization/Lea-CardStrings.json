@@ -101,5 +101,9 @@
   },"leacrosscode:Durian" : {
     "NAME": "Overload Cooling",
     "DESCRIPTION": "Heal 8 HP and gain 2 Strength. !M! uses before removing this from your deck permanently. NL Exhaust."
-  }
+  },"leacrosscode:PreparingAssault" : {
+  "NAME": "Preparing Assault",
+  "DESCRIPTION": "Next turn, add 3 bullet(+) in your hand."
+}
+
 }

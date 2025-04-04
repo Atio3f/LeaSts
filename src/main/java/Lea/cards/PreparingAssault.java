@@ -48,15 +48,14 @@ public class PreparingAssault extends CrosscodeCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        Bullet b = new Bullet();
         this.addToBot(new ApplyPowerAction(p, p, new PreparingAssaultPower(p, 3, this.upgraded)));
         super.use(p, m);
     }
 
     @Override
     public AbstractCard makeCopy() {
-        logger.info("LimitlessSpamCOPY---------------------------------------------------------------------------------------------------------------------------------\n\n");
-        return new LimitlessSpam();
+        logger.info("PreparingAssaultCOPY---------------------------------------------------------------------------------------------------------------------------------\n\n");
+        return new PreparingAssault();
     }
 
     @Override
@@ -64,6 +63,9 @@ public class PreparingAssault extends CrosscodeCard {
         if (!this.upgraded) {
             this.upgradeName();
             this.rawDescription = UPGRADE_DESC;
+            Bullet bullet = new Bullet();
+            bullet.upgrade();
+            this.cardsToPreview = bullet;
         }
     }
 }

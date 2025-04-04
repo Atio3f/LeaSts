@@ -140,6 +140,7 @@ public class LeaMod implements CharacterMod{
         cards.add(new RockSmash());
         cards.add(new OverloadCooling());
         cards.add(new Durian());
+        cards.add(new PreparingAssault());
 
         for(CustomCard card : cards) {
 

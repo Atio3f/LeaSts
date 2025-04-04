@@ -12,8 +12,8 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 
 public class PreparingAssaultPower extends AbstractPower {
     public static final String POWER_ID = "leacrosscode:PreparingAssaultPower";
-    private static final PowerStrings powerStrings;
-    public static final String NAME;
+    //private static final PowerStrings powerStrings;
+    public static final String NAME = "Preparing Assault";
     public static final String[] DESCRIPTIONS = new String[] {
         "Gain ",
         " Bullet next turn."
@@ -60,7 +60,7 @@ public class PreparingAssaultPower extends AbstractPower {
     }
 
     static {
-        powerStrings = CardCrawlGame.languagePack.getPowerStrings("leacrosscode:PreparingAssaultPower");
-        NAME = powerStrings.NAME;
+        //powerStrings = CardCrawlGame.languagePack.getPowerStrings("leacrosscode:PreparingAssaultPower");
+        //NAME = powerStrings.NAME;
     }
 }
