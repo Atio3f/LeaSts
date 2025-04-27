@@ -2,6 +2,8 @@ import Lea.cards.*;
 import Lea.cards.arts.T1.BulletRain;
 import Lea.cards.arts.T1.SphereSaw;
 import Lea.cards.arts.T2.AmberBreaker;
+import Lea.cards.arts.T2.VolcanoCrash;
+import Lea.cards.arts.T3.OneMoreTime;
 import Lea.cards.consumables.BoltDrink;
 import Lea.cards.consumables.Durian;
 import Lea.cards.words.Bye;
@@ -141,6 +143,13 @@ public class LeaMod implements CharacterMod{
         cards.add(new OverloadCooling());
         cards.add(new Durian());
         cards.add(new PreparingAssault());
+        cards.add(new JumpOnWater());
+        cards.add(new OneMoreTime());
+        cards.add(new TargetAbsorb());
+        cards.add(new Hackgey());
+        cards.add(new IceTouch());
+        cards.add(new VolcanoCrash());
+        cards.add(new Patience());
 
         for(CustomCard card : cards) {
 
@@ -178,6 +187,8 @@ public class LeaMod implements CharacterMod{
         BaseMod.addRelicToCustomPool(new MartialCounterAttack(), AbstractCardEnum.LEA_COBALT);
         BaseMod.addRelicToCustomPool(new ConductiveRock(), AbstractCardEnum.LEA_COBALT);
         BaseMod.addRelicToCustomPool(new TurtleShell(), AbstractCardEnum.LEA_COBALT);
+        BaseMod.addRelicToCustomPool(new EasyMode(), AbstractCardEnum.LEA_COBALT);
+        BaseMod.addRelicToCustomPool(new BulletStock(), AbstractCardEnum.LEA_COBALT);
 
     }
 

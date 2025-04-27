@@ -25,7 +25,7 @@ import com.megacrit.cardcrawl.vfx.combat.CleaveEffect;
 import com.megacrit.cardcrawl.vfx.combat.WhirlwindEffect;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
+//MARCHE PAS BIEN
 public class Bye extends CrosscodeCard {
     public static final String ID = "leacrosscode:Bye";
     private static CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);

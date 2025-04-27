@@ -6,7 +6,7 @@
   },
   "leacrosscode:Dash": {
     "NAME": "Dash",
-    "DESCRIPTION": "Gain !B! Block. Draw !M! cards."
+    "DESCRIPTION": "Gain !B! Block. Draw !M! cards. Exhaust."
   },
   "leacrosscode:SphereSaw": {
     "NAME": "Sphere Saw",
@@ -99,11 +99,32 @@
     "NAME": "Overload Cooling",
     "DESCRIPTION": "Restore !M! points of each element. Gain 3 Vigor."
   },"leacrosscode:Durian" : {
-    "NAME": "Overload Cooling",
+    "NAME": "Durian",
     "DESCRIPTION": "Heal 8 HP and gain 2 Strength. !M! uses before removing this from your deck permanently. NL Exhaust."
   },"leacrosscode:PreparingAssault" : {
-  "NAME": "Preparing Assault",
-  "DESCRIPTION": "Next turn, add 3 bullet(+) in your hand."
-}
+    "NAME": "Preparing Assault",
+    "DESCRIPTION": "Next turn, add 3 bullet(+) in your hand."
+  },"leacrosscode:JumpOnWater": {
+    "NAME": "Jump On Water",
+    "DESCRIPTION": "Lose !M! HP. Gain 1 Intangible."
+  },"leacrosscode:OneMoreTime": {
+    "NAME": "One more time",
+    "DESCRIPTION": "Homing 4 damage for each Bullet type cards used this fight. NL Exhaust."
+  },"leacrosscode:TargetAbsorb": {
+    "NAME": "Target Absorb",
+    "DESCRIPTION": "Absorb Target from ALL ennemis and gain 1 Strength for each target. NL Exhaust."
+  },"leacrosscode:Hackgey": {
+    "NAME": "Hackgey",
+    "DESCRIPTION": "Apply -!M! Strength and !M! Weak. NL Exhaust."
+  },"leacrosscode:IceTouch": {
+    "NAME": "Ice Touch",
+    "DESCRIPTION": "PAS ENCORE DECRIT"
+  },"leacrosscode:VolcanoCrash": {
+    "NAME": "Volcano Crash",
+    "DESCRIPTION": "PAS ENCORE FAIT LA CARTE"
+  },"leacrosscode:Patience": {
+    "NAME": "Patience",
+    "DESCRIPTION": "Gain !B! block. Gain !SP_G! SP."
+  }
 
 }

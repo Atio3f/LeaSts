@@ -1,4 +1,5 @@
 import Lea.Abstracts.CrosscodeCard;
+import Lea.cards.Bullet;
 import Lea.characters.Lea;
 import Lea.patches.AbstractCardEnum;
 import Lea.patches.LeaEnum;
@@ -118,7 +119,8 @@ public class LeaCrosscode implements
         BaseMod.addRelicToCustomPool(new MartialCounterAttack(), AbstractCardEnum.LEA_COBALT);
         BaseMod.addRelicToCustomPool(new ConductiveRock(), AbstractCardEnum.LEA_COBALT);
         BaseMod.addRelicToCustomPool(new TurtleShell(), AbstractCardEnum.LEA_COBALT);
-
+        BaseMod.addRelicToCustomPool(new EasyMode(), AbstractCardEnum.LEA_COBALT);
+        BaseMod.addRelicToCustomPool(new BulletStock(), AbstractCardEnum.LEA_COBALT);
         /*for(EditCardsSubscriber perso : persos) {
             perso.receiveEditRelics();
         }*/

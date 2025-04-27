@@ -65,6 +65,7 @@ public class TargetPower extends AbstractPower {
     }
 
     public float atDamageReceive(float damage, DamageInfo.DamageType type) {
+        Lea.logger.info("Il ne devrait pas être là ");
         return damage; //Si il n'y a pas d'indications du type d'attaque on ne change rien des dégâts
     }
 

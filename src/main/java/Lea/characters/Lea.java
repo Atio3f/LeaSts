@@ -97,6 +97,7 @@ public class Lea extends CrosscodeCharacter {
         cartes.add("leacrosscode:Block");
         cartes.add("leacrosscode:Block");
         cartes.add("leacrosscode:OverloadCooling");
+
         System.out.println(cartes + "ENFIN9-----------------------------------------------------------------------------------------------------------------------------\n\n");
         return cartes;
     }

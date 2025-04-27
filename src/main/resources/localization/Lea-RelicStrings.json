@@ -22,14 +22,26 @@
     "NAME": "Conductive Rock",
     "FLAVOR": "JSP",
     "DESCRIPTIONS": [
-      "+5 Shock -2 Wave NL Apply double jolt stacks on ennemies"
+      "+5 Shock -2 Wave NL Each combat, apply double jolt stacks on ennemies."
     ]
   },"leacrosscode:TurtleShell": {
-  "NAME": "Turtle Shell",
-  "FLAVOR": "JSP",
-  "DESCRIPTIONS": [
-    "+1 Ice NL Each combat, gain 2 Protection during the 2 first turn."
-  ]
-}
+      "NAME": "Turtle Shell",
+      "FLAVOR": "JSP",
+      "DESCRIPTIONS": [
+        "+1 Cold NL Each combat, gain 2 Protection during the 2 first turn."
+      ]
+  },"leacrosscode:EasyMode": {
+      "NAME": "Easy Mode",
+      "FLAVOR": "JSP",
+      "DESCRIPTIONS": [
+        "+1 Heat/Cold/Shock/Wave NL Each combat, ALL ennemies lose 1 Strength."
+    ]
+  },"leacrosscode:BulletStock": {
+      "NAME": "Bullet Stock",
+      "FLAVOR": "JSP",
+      "DESCRIPTIONS": [
+        "+2 Wave NL At the start of combat, add 2 Bullet to your hand."
+      ]
+  }
 
 }

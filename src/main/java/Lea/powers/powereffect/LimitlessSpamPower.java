@@ -64,8 +64,8 @@ public class LimitlessSpamPower  extends AbstractPower {
         if (info.owner != null && info.owner.isPlayer && AbstractDungeon.player.cardInUse != null) {
             lastCardUsed = AbstractDungeon.player.cardInUse;  // Stocke la carte utilisée
             if(lastCardUsed.hasTag(customEnums.BULLET)){
-                addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new StrengthPower(AbstractDungeon.player, amount)));
-                addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new LoseStrengthPower(AbstractDungeon.player, amount)));
+                addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new StrengthPower(AbstractDungeon.player, amount)));
+                addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new LoseStrengthPower(AbstractDungeon.player, amount)));
             }
         }
         return damageAmount;

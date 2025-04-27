@@ -3,7 +3,7 @@
   "name" : "LeaFromCrosscode",
   "author_list" : ["Atio"],
   "description" : "Tentative de refaire Léa dans Slay The Spire avec un gameplay proche de celui de Spheromancer.",
-  "version" : "0.1.2",
+  "version" : "0.1.4",
   "sts_version" : "12-18-2022",
   "mts_version" : "3.30.0",
   "dependencies" : ["basemod", "stslib"]
