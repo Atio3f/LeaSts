@@ -42,6 +42,7 @@ public class BoltDrink extends CrosscodeCard {
         logger.info("BoltDrink" + DESCRIPTION + "---------------------------------------------------------------------------------------------------------------------------------\n\n");
         this.magicNumber = this.baseMagicNumber = this.STATS;
 
+        tags.add(CardTags.HEALING); //Permet d'empêcher d'obtenir la carte via dead branch
         this.exhaust = true;
         this.isInnate = true;
         this.isEthereal = true;

@@ -22,7 +22,7 @@ public abstract class CrosscodeCharacter extends CustomPlayer {
     protected int SP_fight = 0;    //SP dans le fight actuel
     String[] elements = {"Heat", "Cold", "Shock", "Wave"};
     String[] elementsStatus = {"Burn", "Chill", "Jolt", "Mark"};
-    Integer[] elementsValeur = {0, 0, 0, 0};
+    public Integer[] elementsValeur = {0, 0, 0, 0};
 
     public CrosscodeCharacter(String name, PlayerClass playerClass, String[] orbTextures, String orbVfxPath, String model, String animation) {
         super(name, playerClass, orbTextures, orbVfxPath, model, animation);
@@ -122,6 +122,9 @@ public abstract class CrosscodeCharacter extends CustomPlayer {
 
     }
 
+    public int getElementValue(String element){
+        return elementsValeur[indexOfElement(element)];
+    }
     public void gainElements(Integer[] elementsGain){
         for(int i=0;i<4;i++){
             elementsValeur[i] += elementsGain[i];

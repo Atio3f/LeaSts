@@ -1,12 +1,16 @@
 package Lea.cards;
 
 import Lea.Abstracts.CrosscodeCard;
+import Lea.Abstracts.CrosscodeCharacter;
 import Lea.Abstracts.FrontTargeting;
 import Lea.characters.Lea;
 import Lea.enums.TypeDegats;
 import Lea.enums.customEnums;
 import Lea.patches.AbstractCardEnum;
+import Lea.powers.ChillPower;
+import Lea.powers.JoltPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -43,9 +47,7 @@ public class IceTouch extends CrosscodeCard {
         logger.info("IceTouch" + DESCRIPTION + "---------------------------------------------------------------------------------------------------------------------------------\n\n");
         this.damage=this.baseDamage = ATTACK_DMG;
 
-        tags.add(CardTags.STARTER_STRIKE); //This tag marks it as a basic Strike
-        tags.add(CardTags.STRIKE); //This tag marks it as a Strike card for the purposes of Perfected Strike and any similar modded effects
-        tags.add(customEnums.NEUTRAL);
+        tags.add(customEnums.COLD);
         tags.add(customEnums.MELEE);
 
 
@@ -57,6 +59,13 @@ public class IceTouch extends CrosscodeCard {
             new DamageInfo(p, this.damage, this.damageTypeForTurn),
             AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
         System.out.println("TYPE DEGATS " + this.damageTypeForTurn);
+        if(p instanceof CrosscodeCharacter) {
+            int coldValue = ((CrosscodeCharacter) p).getElementValue("Cold");
+            addToBot(new ApplyPowerAction(m,
+                p, new ChillPower(m, p, coldValue), coldValue, true, AbstractGameAction.AttackEffect.BLUNT_LIGHT));
+            ((CrosscodeCharacter) p).spendingElementalSP(this, 0, 0, "Cold", coldValue);
+        }
+
         super.use(p, m);
     }
 

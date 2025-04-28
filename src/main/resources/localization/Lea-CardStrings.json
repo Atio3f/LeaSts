@@ -125,6 +125,12 @@
   },"leacrosscode:Patience": {
     "NAME": "Patience",
     "DESCRIPTION": "Gain !B! block. Gain !SP_G! SP."
+  },"leacrosscode:SapStrength": {
+    "NAME": "Sap Strength",
+    "DESCRIPTION": "Steal !M! Strength to an ennemi this turn. NL Exhaust."
+  },"leacrosscode:Sonar": {
+    "NAME": "Sonar",
+    "DESCRIPTION": "Apply 2 Mark to ALL ennemies. Then, apply 2 Target on ennemi."
   }
 
 }

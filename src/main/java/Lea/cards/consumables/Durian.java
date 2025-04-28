@@ -61,6 +61,7 @@ public class Durian extends CrosscodeCard {
                 }
             }
         }
+        initializeDescription();
         super.use(p, m);
     }
 

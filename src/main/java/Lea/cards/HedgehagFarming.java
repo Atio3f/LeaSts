@@ -41,7 +41,7 @@ public class HedgehagFarming extends CrosscodeCard {
         logger.info("HedgehagFarming" + DESCRIPTION + "---------------------------------------------------------------------------------------------------------------------------------\n\n");
         this.magicNumber = this.baseMagicNumber = NUMBER_UPGRADE;
 
-
+        tags.add(CardTags.HEALING); //Permet d'empêcher d'obtenir la carte via dead branch
         tags.add(customEnums.NEUTRAL);
         this.exhaust = true;
 

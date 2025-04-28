@@ -28,8 +28,8 @@ public class OneMoreTime extends CrosscodeCard {
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String IMG_PATH = "img/Lea/cards/VPRCharge.png";        //IMAGE A CHANGER
-    private static final int COST = 2;
-    private static final int UPGRADE_COST = 1;
+    private static final int COST = 3;
+    private static final int UPGRADE_COST = 2;
     private static final int ATTACK_DMG = 3;
     private static final int UPGRADE_PLUS_DMG = 0;
     private static final int SP_COST = 8;

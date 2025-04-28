@@ -150,6 +150,8 @@ public class LeaMod implements CharacterMod{
         cards.add(new IceTouch());
         cards.add(new VolcanoCrash());
         cards.add(new Patience());
+        cards.add(new SapStrength());
+        cards.add(new Sonar());
 
         for(CustomCard card : cards) {
 

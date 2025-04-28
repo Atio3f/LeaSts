@@ -72,6 +72,8 @@ public class LimitlessSpam extends CrosscodeCard {
             this.cardsToPreview = new Bullet();
             this.upgradeName();
             this.rawDescription = UPGRADE_DESC;
+            initializeDescription();
+
         }
     }
 }

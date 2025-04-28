@@ -34,7 +34,20 @@ public class MarkPower  extends AbstractPower {
     }
 
     public MarkPower(AbstractCreature owner, AbstractCreature source, int amount) {
-
-
+        this.name = NAME;
+        this.ID = POWER_ID;
+        this.owner = owner;
+        this.source = source;
+        this.amount = amount;
+        updateDescription();
+        this.type = PowerType.DEBUFF;
+        this.isTurnBased = true;
+        this.priority = 20;
+        this.img = new Texture("img/Lea/powers/MarkPower.png");
+        if (AbstractDungeon.actionManager.turnHasEnded) {
+            this.justApplied = true;
+        }
     }
+
+
 }

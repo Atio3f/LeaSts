@@ -30,8 +30,8 @@ public class JumpOnWater extends CrosscodeCard {
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String IMG_PATH = "img/Lea/cards/Dash.png"; //IMAGE A CHANGER
     private static final int COST = 1;
-    private static final int DAMAGE_TAKEN = 5;
-    private static final int UPGRADE_MINUS_DMG = -3;
+    private static final int DAMAGE_TAKEN = 9;
+    private static final int UPGRADE_MINUS_DMG = -5;
     private static final int SP_COST = 0;
     private static final int SP_GAIN = 0;
 
