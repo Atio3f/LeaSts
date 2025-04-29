@@ -103,7 +103,8 @@
     "DESCRIPTION": "Heal 8 HP and gain 2 Strength. !M! uses before removing this from your deck permanently. NL Exhaust."
   },"leacrosscode:PreparingAssault" : {
     "NAME": "Preparing Assault",
-    "DESCRIPTION": "Next turn, add 3 bullet(+) in your hand."
+    "DESCRIPTION": "Next turn, add 3 bullet in your hand.",
+    "UPGRADE_DESCRIPTION": "Next turn, add 3 bullet+ in your hand."
   },"leacrosscode:JumpOnWater": {
     "NAME": "Jump On Water",
     "DESCRIPTION": "Lose !M! HP. Gain 1 Intangible."
@@ -131,6 +132,9 @@
   },"leacrosscode:Sonar": {
     "NAME": "Sonar",
     "DESCRIPTION": "Apply 2 Mark to ALL ennemies. Then, apply 2 Target on ennemi."
+  },"leacrosscode:WaveBounce": {
+    "NAME": "Wave Bounce",
+    "DESCRIPTION": "Hit all ennemis 1 per 1 dealing !D! damage and applying 2 Mark. Deal !M!% of damage and apply !M!% of Mark each hit. NL Gain !SP_G! SP."
   }
 
 }

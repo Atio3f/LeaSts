@@ -57,6 +57,7 @@ public class PreparingAssaultPower extends AbstractPower {
             b.upgrade();
         }
         this.addToBot(new MakeTempCardInHandAction(b, amount));
+        this.addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, "leacrosscode:PreparingAssaultPower"));
     }
 
     static {

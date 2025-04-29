@@ -41,7 +41,7 @@ public class Durian extends CrosscodeCard {
             CardRarity.RARE, CardTarget.SELF, SP_COST, SP_GAIN);
         logger.info("Durian" + DESCRIPTION + "---------------------------------------------------------------------------------------------------------------------------------\n\n");
         this.magicNumber = this.baseMagicNumber = this.UTILISATIONS_MAX;
-
+        tags.add(CardTags.HEALING); //Permet d'empêcher d'obtenir la carte via dead branch
         this.exhaust = true;
 
     }

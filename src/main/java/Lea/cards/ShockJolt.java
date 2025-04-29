@@ -51,7 +51,7 @@ public class ShockJolt extends CrosscodeCard {
     public ShockJolt() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
             AbstractCard.CardType.ATTACK, AbstractCardEnum.LEA_COBALT,
-            CardRarity.COMMON, CardTarget.ALL_ENEMY, SP_COST, SP_GAIN, 1);
+            CardRarity.COMMON, CardTarget.ALL_ENEMY, SP_COST, SP_GAIN, SHOCK_COST);
         logger.info("ShockJolt" + DESCRIPTION + "---------------------------------------------------------------------------------------------------------------------------------\n\n");
         this.damage=this.baseDamage = ATTACK_DMG;
         this.magicNumber = this.baseMagicNumber = JOLT_AMT;

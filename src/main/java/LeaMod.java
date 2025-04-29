@@ -152,6 +152,7 @@ public class LeaMod implements CharacterMod{
         cards.add(new Patience());
         cards.add(new SapStrength());
         cards.add(new Sonar());
+        cards.add(new WaveBounce());
 
         for(CustomCard card : cards) {
 

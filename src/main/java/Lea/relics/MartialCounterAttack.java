@@ -19,7 +19,7 @@ public class MartialCounterAttack  extends CrosscodeRelic {
 
     public MartialCounterAttack(){
         super(ID, new Texture("img/Lea/relics/SpheromancerHeart.png" ),//IMAGE A CHANGER
-            RelicTier.COMMON, LandingSound.MAGICAL, elements);
+            RelicTier.UNCOMMON, LandingSound.MAGICAL, elements);
         this.description = DESCRIPTION;
         this.flavorText = FLAVOR;
     }

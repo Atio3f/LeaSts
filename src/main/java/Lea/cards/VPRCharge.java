@@ -62,7 +62,7 @@ public class VPRCharge extends CrosscodeCard {
 
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m,
                 new CrosscodeDamageInfo(p, this.damage, this.damageTypeForTurn, tags),
-                AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+                AbstractGameAction.AttackEffect.SMASH));
         //A changer pour l'effet de Target quand il sera implémenté
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new TargetPower(m, this.magicNumber), this.magicNumber, true, AbstractGameAction.AttackEffect.NONE));
 
