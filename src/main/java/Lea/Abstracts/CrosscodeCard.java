@@ -87,6 +87,7 @@ public abstract class CrosscodeCard extends CustomCard {
     //
     private boolean hasEnoughSP(CrosscodeCharacter p) {
         if(p.SP_fight < SP_Cost){
+            this.cantUseMessage = "Not enough SP...";
             return false;
         }else{
             return true;

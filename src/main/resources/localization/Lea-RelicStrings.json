@@ -7,7 +7,7 @@
     ]
   },
   "leacrosscode:PreciseFocus": {
-    "NAME": "Precise focus",
+    "NAME": "Precise Focus",
     "FLAVOR": "JSP",
     "DESCRIPTIONS": [
       "+1 Wave NL Enemies with Target takes one more damage from BULLETS."
@@ -42,6 +42,18 @@
       "DESCRIPTIONS": [
         "+2 Wave NL At the start of combat, add 2 Bullet to your hand."
       ]
+  },"leacrosscode:FieryTitansGauntlet": {
+    "NAME": "Fiery Titans Gauntlet",
+    "FLAVOR": "JSP",
+    "DESCRIPTIONS": [
+      "+4 Heat -3 Cold NL On obtain, transform your Hit in Fiery Hit."
+    ]
+  },"leacrosscode:MassCarnage": {
+    "NAME": "Mass Carnage",
+    "FLAVOR": "JSP",
+    "DESCRIPTIONS": [
+      "+1 Heat NL Whenever an enemy dies, gain 3 Vigor and draw 2 cards."
+    ]
   }
 
 }

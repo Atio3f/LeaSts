@@ -38,7 +38,7 @@ public class IceTouch extends CrosscodeCard {
     private static final int SP_COST = 0;
     private static final int SP_GAIN = 0;
 
-    private static final TypeDegats TYPE_DEGATS = TypeDegats.ICE;
+    private static final TypeDegats TYPE_DEGATS = TypeDegats.COLD;
     public static final Logger logger = LogManager.getLogger(Lea.class.getName());
     public IceTouch() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,

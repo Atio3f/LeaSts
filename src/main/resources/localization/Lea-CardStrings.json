@@ -135,6 +135,17 @@
   },"leacrosscode:WaveBounce": {
     "NAME": "Wave Bounce",
     "DESCRIPTION": "Hit all ennemis 1 per 1 dealing !D! damage and applying 2 Mark. Deal !M!% of damage and apply !M!% of Mark each hit. NL Gain !SP_G! SP."
-  }
+  },"leacrosscode:MemoryLost": {
+    "NAME": "Memory Lost",
+    "DESCRIPTION": "Unplayable. NL At the end of your turn, exhaust a random card in your hand."
+  },"leacrosscode:Shocked": {
+    "NAME": "Shocked -- MARCHE PAS ENCORE",
+    "DESCRIPTION": "While in hand, you can't play any attack."
+  },"leacrosscode:AFK": {
+    "NAME": "AFK",
+    "DESCRIPTION": "Retain your hand this turn. NL Gain !SP_G! SP. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Retain your hand this turn. NL Gain !SP_G! SP."
+}
 
 }
+

@@ -6,6 +6,8 @@ import Lea.cards.arts.T2.VolcanoCrash;
 import Lea.cards.arts.T3.OneMoreTime;
 import Lea.cards.consumables.BoltDrink;
 import Lea.cards.consumables.Durian;
+import Lea.cards.curses.MemoryLost;
+import Lea.cards.curses.Shocked;
 import Lea.cards.words.Bye;
 import Lea.cards.words.Wait;
 import Lea.patches.AbstractCardEnum;
@@ -153,6 +155,9 @@ public class LeaMod implements CharacterMod{
         cards.add(new SapStrength());
         cards.add(new Sonar());
         cards.add(new WaveBounce());
+        cards.add(new MemoryLost());
+        cards.add(new Shocked());
+        cards.add(new AFK());
 
         for(CustomCard card : cards) {
 
@@ -176,8 +181,8 @@ public class LeaMod implements CharacterMod{
         BaseMod.addKeyword(new String[] {"burn", "burns", "burned", "Burn", "Burns", "Burned"}, "DESCRIPTION A AJOUTER");
         BaseMod.addKeyword(new String[] {"jolt", "jolts", "jolted", "Jolt", "Jolts", "Jolted"}, "DESCRIPTION A AJOUTER");
         BaseMod.addKeyword(new String[] {"mark", "marks", "marked", "Mark", "Marks", "Marked"}, "DESCRIPTION A AJOUTER");
-        BaseMod.addKeyword(new String[] {"Target", "target"}, "Increase damage taken by BULLET by 2. Can only be applied to 1 ennemy");
-        BaseMod.addKeyword(new String[] {"Homing", "homing", "homed"}, "Shot a bullet to a random ennemy if no ennemy is marked");
+        BaseMod.addKeyword(new String[] {"Target", "target"}, "Increase damage taken by BULLET by 2. Can only be applied to 1 ennemy.");
+        BaseMod.addKeyword(new String[] {"Homing", "homing", "homed"}, "Shot a bullet to a random ennemy if no ennemy is marked.");
 
         BaseMod.addKeyword(new String[] {"Limitless Spam"}, "Each time you hit with a bullet, gain 1 temp Strength.");
 
@@ -192,6 +197,8 @@ public class LeaMod implements CharacterMod{
         BaseMod.addRelicToCustomPool(new TurtleShell(), AbstractCardEnum.LEA_COBALT);
         BaseMod.addRelicToCustomPool(new EasyMode(), AbstractCardEnum.LEA_COBALT);
         BaseMod.addRelicToCustomPool(new BulletStock(), AbstractCardEnum.LEA_COBALT);
+        BaseMod.addRelicToCustomPool(new FieryTitansGauntlet(), AbstractCardEnum.LEA_COBALT);
+        BaseMod.addRelicToCustomPool(new MassCarnage(), AbstractCardEnum.LEA_COBALT);
 
     }
 

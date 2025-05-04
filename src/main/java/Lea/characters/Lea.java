@@ -40,7 +40,7 @@ import org.apache.logging.log4j.Logger;
 
 public class Lea extends CrosscodeCharacter {
 
-    public static final int ENERGY_PER_TURN = 5; // how much energy you get every turn
+    public static final int ENERGY_PER_TURN = 3; // how much energy you get every turn
     public static final String MY_CHARACTER_SHOULDER_2 = "img/Lea/characters/Lea/shoulder2.png"; // campfire pose
     public static final String MY_CHARACTER_SHOULDER_1 = "img/Lea/characters/Lea/shoulder1.png"; // another campfire pose
     public static final String MY_CHARACTER_CORPSE = "img/Lea/characters/Lea/corpse.png"; // dead corpse
@@ -97,6 +97,7 @@ public class Lea extends CrosscodeCharacter {
         cartes.add("leacrosscode:Block");
         cartes.add("leacrosscode:Block");
         cartes.add("leacrosscode:OverloadCooling");
+        cartes.add("leacrosscode:MemoryLost");
 
         System.out.println(cartes + "ENFIN9-----------------------------------------------------------------------------------------------------------------------------\n\n");
         return cartes;
