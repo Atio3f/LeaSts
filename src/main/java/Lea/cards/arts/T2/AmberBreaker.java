@@ -1,10 +1,7 @@
 package Lea.cards.arts.T2;
 
 import Lea.Abstracts.CrosscodeCard;
-import Lea.Abstracts.CrosscodeDamageInfo;
 import Lea.Abstracts.FrontTargeting;
-import Lea.Abstracts.HomingTargeting;
-import Lea.cards.arts.T1.BulletRain;
 import Lea.characters.Lea;
 import Lea.enums.TypeDegats;
 import Lea.enums.customEnums;
@@ -13,7 +10,6 @@ import Lea.powers.JoltPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.common.DamageRandomEnemyAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -46,7 +42,7 @@ public class AmberBreaker extends CrosscodeCard {
     public AmberBreaker() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
             AbstractCard.CardType.ATTACK, AbstractCardEnum.LEA_COBALT,
-            CardRarity.RARE, AbstractCardEnum.FRONT, SP_COST, SP_GAIN);
+            customEnums.COMBAT_ART_T2, AbstractCardEnum.FRONT, SP_COST, SP_GAIN);
         logger.info("AmberBreaker" + DESCRIPTION + "---------------------------------------------------------------------------------------------------------------------------------\n\n");
         this.damage=this.baseDamage = ATTACK_DMG;
         this.magicNumber = this.baseMagicNumber = NUMBER_HITS;

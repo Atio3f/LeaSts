@@ -40,19 +40,28 @@ public class Durian extends CrosscodeCard {
             AbstractCard.CardType.SKILL, AbstractCardEnum.LEA_COBALT,
             CardRarity.RARE, CardTarget.SELF, SP_COST, SP_GAIN);
         logger.info("Durian" + DESCRIPTION + "---------------------------------------------------------------------------------------------------------------------------------\n\n");
-        this.magicNumber = this.baseMagicNumber = this.UTILISATIONS_MAX;
+        this.misc = this.UTILISATIONS_MAX;
+        this.magicNumber = this.baseMagicNumber = this.misc;
         tags.add(CardTags.HEALING); //Permet d'empêcher d'obtenir la carte via dead branch
         this.exhaust = true;
 
     }
 
     @Override
+    public void applyPowers() {
+        //Actualize the
+        this.magicNumber = this.baseMagicNumber = this.misc;
+        super.applyPowers();
+        this.initializeDescription();
+    }
+    @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new HealAction(p, p, 8));
         this.addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, 2), 2));
-
-        this.magicNumber--;
-        if(this.magicNumber==0){
+        this.misc--;
+        this.magicNumber = this.baseMagicNumber = this.misc;
+        this.initializeDescription();
+        if(this.misc==0){
             //SUPPRIMER DU JEU DANS CE CAS JE LAISSE POUR APRES
             for (AbstractCard carteDeck : AbstractDungeon.player.masterDeck.group) {
                 if (carteDeck.uuid == this.uuid) {
@@ -76,6 +85,7 @@ public class Durian extends CrosscodeCard {
         if (!this.upgraded) {
             this.upgradeName();
             this.upgradeMagicNumber(UTILISATIONS_UPGRADE);
+            this.misc += 1;
         }
     }
 }

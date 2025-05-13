@@ -3,7 +3,6 @@ package Lea.cards;
 import Lea.Abstracts.CrosscodeCard;
 import Lea.Abstracts.CrosscodeDamageInfo;
 import Lea.Abstracts.HomingTargeting;
-import Lea.cards.arts.T1.BulletRain;
 import Lea.characters.Lea;
 import Lea.enums.TypeDegats;
 import Lea.enums.customEnums;

@@ -22,6 +22,17 @@ public class FrontTargeting extends TargetingHandler<AbstractCreature>{
         return cible;
     }
 
+    public static AbstractCreature getTarget() {
+        AbstractMonster cible = null ;
+        for (AbstractMonster m : AbstractDungeon.getMonsters().monsters) {
+            if (!m.isDeadOrEscaped()) {
+                cible = m;    //On marque le 1er ennemi encore en vie
+                break;
+            }
+        }
+
+        return cible;
+    }
     //We don't need it because the target will be the front ennemi
     @Override
     public void updateHovered() {

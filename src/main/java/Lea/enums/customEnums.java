@@ -29,4 +29,16 @@ public class customEnums {
     public static AbstractCard.CardTags DASH;
     @SpireEnum
     public static AbstractCard.CardTags COMBAT_ART;
+    @SpireEnum
+    public static AbstractCard.CardTags COMPANION;
+
+    //Combat arts rarity, allow to separate their pools to avoid people to get too many of them
+    @SpireEnum
+    public static AbstractCard.CardRarity COMBAT_ART_STARTER;
+    @SpireEnum
+    public static AbstractCard.CardRarity COMBAT_ART_T1;
+    @SpireEnum
+    public static AbstractCard.CardRarity COMBAT_ART_T2;
+    @SpireEnum
+    public static AbstractCard.CardRarity COMBAT_ART_T3;
 }

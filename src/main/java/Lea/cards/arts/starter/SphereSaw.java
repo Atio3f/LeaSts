@@ -1,4 +1,4 @@
-package Lea.cards.arts.T1;
+package Lea.cards.arts.starter;
 
 import Lea.Abstracts.CrosscodeCard;
 import Lea.Abstracts.FrontTargeting;
@@ -42,7 +42,7 @@ public class SphereSaw extends CrosscodeCard {
     public SphereSaw() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
         AbstractCard.CardType.ATTACK, AbstractCardEnum.LEA_COBALT,
-        CardRarity.BASIC, AbstractCardEnum.FRONT, SP_COST, SP_GAIN);
+        customEnums.COMBAT_ART_STARTER, AbstractCardEnum.FRONT, SP_COST, SP_GAIN);
         logger.info("SPHERESAW" + DESCRIPTION + "---------------------------------------------------------------------------------------------------------------------------------\n\n");
         this.damage=this.baseDamage = ATTACK_DMG;
         this.magicNumber = this.baseMagicNumber = VULNERABLE_AMT;

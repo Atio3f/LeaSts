@@ -1,15 +1,20 @@
+package Lea;
 import Lea.cards.*;
-import Lea.cards.arts.T1.BulletRain;
-import Lea.cards.arts.T1.SphereSaw;
+import Lea.cards.arts.starter.BulletRain;
+import Lea.cards.arts.starter.SphereSaw;
 import Lea.cards.arts.T2.AmberBreaker;
 import Lea.cards.arts.T2.VolcanoCrash;
 import Lea.cards.arts.T3.OneMoreTime;
+import Lea.cards.companions.Ctron;
+import Lea.cards.companions.Emilienator;
+import Lea.cards.companions.Hackgey;
 import Lea.cards.consumables.BoltDrink;
 import Lea.cards.consumables.Durian;
 import Lea.cards.curses.MemoryLost;
 import Lea.cards.curses.Shocked;
 import Lea.cards.words.Bye;
 import Lea.cards.words.Wait;
+import Lea.enums.customEnums;
 import Lea.patches.AbstractCardEnum;
 import Lea.relics.*;
 import basemod.BaseMod;
@@ -17,6 +22,7 @@ import basemod.abstracts.CustomCard;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.localization.CardStrings;
@@ -36,6 +42,11 @@ public class LeaMod implements CharacterMod{
     private static final String POWER = "bg_power_purple";
     private static final String ENERGY_ORB = "card_purple_orb";
     private static final String SMALL_ENERGY_ORB = "small_orb";
+
+    public static CardGroup combatArtStarterPool;
+    public static CardGroup combatArtT1Pool;
+    public static CardGroup combatArtT2Pool;
+    public static CardGroup combatArtT3Pool;
 
     public LeaMod(){
         BaseMod.addColor(AbstractCardEnum.LEA_COBALT, COBALT, COBALT, COBALT, COBALT, COBALT,
@@ -158,7 +169,23 @@ public class LeaMod implements CharacterMod{
         cards.add(new MemoryLost());
         cards.add(new Shocked());
         cards.add(new AFK());
+        cards.add(new Ctron());
+        cards.add(new Emilienator());
+        //Place receiveEditCards from caracters here with the cards variable on it
 
+        combatArtStarterPool = new CardGroup(CardGroup.CardGroupType.CARD_POOL);
+        combatArtT1Pool = new CardGroup(CardGroup.CardGroupType.CARD_POOL);
+        combatArtT2Pool = new CardGroup(CardGroup.CardGroupType.CARD_POOL);
+        combatArtT3Pool = new CardGroup(CardGroup.CardGroupType.CARD_POOL);
+
+        for (AbstractCard c : cards) {
+            if (c.rarity == customEnums.COMBAT_ART_STARTER) {
+                combatArtStarterPool.addToBottom(c.makeCopy());
+            }else if(c.rarity == customEnums.COMBAT_ART_T1){
+                combatArtStarterPool.addToBottom(c.makeCopy());
+
+            }
+        }
         for(CustomCard card : cards) {
 
             LeaCrosscode.logger.info("Ajout de "+card.cardID + "---------------------------------------------------------------------------------------------------------------------------------\n\n");
@@ -253,4 +280,7 @@ public class LeaMod implements CharacterMod{
     public void receivePostExhaust(AbstractCard abstractCard) {
 
     }
+
+
+
 }

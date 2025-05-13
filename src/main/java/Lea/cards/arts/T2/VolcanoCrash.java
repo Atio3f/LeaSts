@@ -45,7 +45,7 @@ public class VolcanoCrash extends CrosscodeCard {
     public VolcanoCrash() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
             AbstractCard.CardType.ATTACK, AbstractCardEnum.LEA_COBALT,
-            CardRarity.RARE, AbstractCardEnum.FRONT, SP_COST, SP_GAIN);
+            customEnums.COMBAT_ART_T2, AbstractCardEnum.FRONT, SP_COST, SP_GAIN);
         logger.info("VolcanoCrash" + DESCRIPTION + "---------------------------------------------------------------------------------------------------------------------------------\n\n");
         this.damage=this.baseDamage = ATTACK_DMG;
         this.magicNumber = this.baseMagicNumber = NUMBER_HITS;

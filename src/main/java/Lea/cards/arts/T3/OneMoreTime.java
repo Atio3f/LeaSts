@@ -30,7 +30,7 @@ public class OneMoreTime extends CrosscodeCard {
     public static final String IMG_PATH = "img/Lea/cards/VPRCharge.png";        //IMAGE A CHANGER
     private static final int COST = 3;
     private static final int UPGRADE_COST = 2;
-    private static final int ATTACK_DMG = 3;
+    private static final int ATTACK_DMG = 3;    //Nerf to 1 was 3 beforge and 4 in first
     private static final int UPGRADE_PLUS_DMG = 0;
     private static final int SP_COST = 8;
     private static final int SP_GAIN = 0;
@@ -41,7 +41,7 @@ public class OneMoreTime extends CrosscodeCard {
     public OneMoreTime() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
             AbstractCard.CardType.ATTACK, AbstractCardEnum.LEA_COBALT,
-            CardRarity.RARE, AbstractCardEnum.HOMING, SP_COST, SP_GAIN);
+            customEnums.COMBAT_ART_T3, AbstractCardEnum.HOMING, SP_COST, SP_GAIN);
         logger.info("OneMoreTime" + DESCRIPTION + "---------------------------------------------------------------------------------------------------------------------------------\n\n");
         this.damage=this.baseDamage = ATTACK_DMG;
         this.magicNumber = this.baseMagicNumber = NUMBER_HITS;

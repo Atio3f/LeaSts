@@ -66,7 +66,9 @@ public class TargetAbsorb extends CrosscodeCard {
                 monster.powers.removeIf(x -> x.ID.equals("leacrosscode:TargetPower"));
             }
         }
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new StrengthPower(p, targetAmt), targetAmt, true, AbstractGameAction.AttackEffect.NONE));
+        if(targetAmt>0){
+            addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, targetAmt), targetAmt, true, AbstractGameAction.AttackEffect.NONE));
+        }
 
         super.use(p, m);
     }

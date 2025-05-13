@@ -89,8 +89,6 @@ public class Lea extends CrosscodeCharacter {
         cartes.add("leacrosscode:Hit");
         cartes.add("leacrosscode:Hit");
         cartes.add("leacrosscode:Hit");
-        cartes.add("leacrosscode:SphereSaw");
-        cartes.add("leacrosscode:VPRSpam");
         cartes.add("leacrosscode:Dash");
         cartes.add("leacrosscode:Dash");
         cartes.add("leacrosscode:Block");
@@ -99,6 +97,9 @@ public class Lea extends CrosscodeCharacter {
         cartes.add("leacrosscode:OverloadCooling");
         cartes.add("leacrosscode:MemoryLost");
 
+        cartes.add("leacrosscode:SphereSaw");
+        cartes.add("leacrosscode:VPRSpam");
+        LeaMod.combatArtStarterPool.getRandomCard
         System.out.println(cartes + "ENFIN9-----------------------------------------------------------------------------------------------------------------------------\n\n");
         return cartes;
     }

@@ -35,7 +35,7 @@ public class Patience extends CrosscodeCard {
     public Patience() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
             AbstractCard.CardType.SKILL, AbstractCardEnum.LEA_COBALT,
-            CardRarity.BASIC, CardTarget.SELF, SP_COST, SP_GAIN);
+            CardRarity.UNCOMMON, CardTarget.SELF, SP_COST, SP_GAIN);
         logger.info("Patience" + DESCRIPTION + "---------------------------------------------------------------------------------------------------------------------------------\n\n");
         //this.magicNumber = this.baseMagicNumber = CARD_DRAW;
         this.baseBlock = BLOCK_VALUE;

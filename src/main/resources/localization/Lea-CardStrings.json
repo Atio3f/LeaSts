@@ -110,10 +110,10 @@
     "DESCRIPTION": "Lose !M! HP. Gain 1 Intangible."
   },"leacrosscode:OneMoreTime": {
     "NAME": "One more time",
-    "DESCRIPTION": "Homing 4 damage for each Bullet type cards used this fight. NL Exhaust."
+    "DESCRIPTION": "Homing !D! damage for each Bullet type cards used this fight. NL Exhaust."
   },"leacrosscode:TargetAbsorb": {
     "NAME": "Target Absorb",
-    "DESCRIPTION": "Absorb Target from ALL ennemis and gain 1 Strength for each target. NL Exhaust."
+    "DESCRIPTION": "Absorb Target from ALL ennemis and gain !M! Strength for each target. NL Exhaust."
   },"leacrosscode:Hackgey": {
     "NAME": "Hackgey",
     "DESCRIPTION": "Apply -!M! Strength and !M! Weak. NL Exhaust."
@@ -131,7 +131,7 @@
     "DESCRIPTION": "Steal !M! Strength to an ennemi this turn. NL Exhaust."
   },"leacrosscode:Sonar": {
     "NAME": "Sonar",
-    "DESCRIPTION": "Apply 2 Mark to ALL ennemies. Then, apply 2 Target on ennemi."
+    "DESCRIPTION": "Apply !M! Mark to ALL ennemies. Then, apply !M! Target on ennemi."
   },"leacrosscode:WaveBounce": {
     "NAME": "Wave Bounce",
     "DESCRIPTION": "Hit all ennemis 1 per 1 dealing !D! damage and applying 2 Mark. Deal !M!% of damage and apply !M!% of Mark each hit. NL Gain !SP_G! SP."
@@ -145,7 +145,18 @@
     "NAME": "AFK",
     "DESCRIPTION": "Retain your hand this turn. NL Gain !SP_G! SP. NL Exhaust.",
     "UPGRADE_DESCRIPTION": "Retain your hand this turn. NL Gain !SP_G! SP."
-}
+  },"leacrosscode:FieryHit": {
+    "NAME": "FieryHit",
+    "DESCRIPTION": "Deal !D! damage to the front ennemi. Apply !M! Burn. NL Gain !SP_G! SP."
+  },"leacrosscode:Ctron": {
+    "NAME": "C'tron",
+    "DESCRIPTION": "Discard your hand. Add 1 Bullet into your hand for each card discarded.",
+    "UPGRADE_DESCRIPTION": "Discard your hand. Add 1 Bullet+ into your hand for each card discarded."
+  },"leacrosscode:Emilienator": {
+    "NAME": "Emilienator",
+    "DESCRIPTION": "At the end of each turn, deal !M! melee damage to the front ennemi.",
+    "UPGRADE_DESCRIPTION": "At the end of each turn, deal !M! melee damage to the front ennemi."
+  }
 
 }
 

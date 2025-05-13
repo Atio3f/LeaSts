@@ -42,7 +42,7 @@ public class RockSmash extends CrosscodeCard {
     public RockSmash() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
             AbstractCard.CardType.ATTACK, AbstractCardEnum.LEA_COBALT,
-            CardRarity.BASIC, AbstractCardEnum.FRONT, SP_COST, SP_GAIN);
+            CardRarity.COMMON, AbstractCardEnum.FRONT, SP_COST, SP_GAIN);
         logger.info("RockSmash" + DESCRIPTION + "---------------------------------------------------------------------------------------------------------------------------------\n\n");
         this.damage=this.baseDamage = ATTACK_DMG;
         this.block=this.baseBlock = BLOCK_VALUE;
@@ -52,6 +52,7 @@ public class RockSmash extends CrosscodeCard {
 
 
     }
+
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {

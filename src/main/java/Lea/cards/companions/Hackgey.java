@@ -1,19 +1,16 @@
-package Lea.cards;
+package Lea.cards.companions;
 
 import Lea.Abstracts.CrosscodeCard;
 import Lea.characters.Lea;
 import Lea.enums.TypeDegats;
 import Lea.enums.customEnums;
 import Lea.patches.AbstractCardEnum;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.powers.WeakPower;
 import org.apache.logging.log4j.LogManager;
@@ -44,7 +41,7 @@ public class Hackgey extends CrosscodeCard {
         logger.info("Hackgey" + DESCRIPTION + "---------------------------------------------------------------------------------------------------------------------------------\n\n");
         this.magicNumber = this.baseMagicNumber = LOSE_STRENGTH_AMT;
 
-
+        tags.add(customEnums.COMPANION);
         this.exhaust = true;
 
     }

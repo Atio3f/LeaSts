@@ -1,4 +1,4 @@
-package Lea.cards.arts.T1;
+package Lea.cards.arts.starter;
 
 import Lea.Abstracts.CrosscodeCard;
 import Lea.Abstracts.CrosscodeDamageInfo;
@@ -7,9 +7,7 @@ import Lea.characters.Lea;
 import Lea.enums.TypeDegats;
 import Lea.enums.customEnums;
 import Lea.patches.AbstractCardEnum;
-import Lea.powers.TargetPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.DamageRandomEnemyAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -43,7 +41,7 @@ public class BulletRain extends CrosscodeCard {
     public BulletRain() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
             AbstractCard.CardType.ATTACK, AbstractCardEnum.LEA_COBALT,
-            CardRarity.COMMON, AbstractCardEnum.HOMING, SP_COST, SP_GAIN);
+            customEnums.COMBAT_ART_STARTER, AbstractCardEnum.HOMING, SP_COST, SP_GAIN);
         logger.info("BulletRain" + DESCRIPTION + "---------------------------------------------------------------------------------------------------------------------------------\n\n");
         this.damage=this.baseDamage = ATTACK_DMG;
         this.magicNumber = this.baseMagicNumber = NUMBER_HITS;
