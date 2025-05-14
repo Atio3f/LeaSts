@@ -1,5 +1,6 @@
+package Lea;
+
 import Lea.Abstracts.CrosscodeCard;
-import Lea.cards.Bullet;
 import Lea.characters.Lea;
 import Lea.patches.AbstractCardEnum;
 import Lea.patches.LeaEnum;
@@ -10,9 +11,7 @@ import Lea.relics.*;
 import basemod.AutoAdd;
 import basemod.interfaces.*;
 import com.badlogic.gdx.graphics.Color;
-import com.badlogic.gdx.graphics.Texture;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;

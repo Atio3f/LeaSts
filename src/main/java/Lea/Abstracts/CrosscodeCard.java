@@ -1,6 +1,7 @@
 package Lea.Abstracts;
 
 import Lea.characters.Lea;
+import Lea.enums.customEnums;
 import basemod.abstracts.CustomCard;
 import com.evacipated.cardcrawl.mod.stslib.variables.ExhaustiveVariable;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -8,6 +9,9 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import org.apache.logging.log4j.LogManager;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 public abstract class CrosscodeCard extends CustomCard {
@@ -52,6 +56,21 @@ public abstract class CrosscodeCard extends CustomCard {
         }
     }
 
+    @Override
+    public List<String> getCardDescriptors() {
+        List<String> descriptors = new ArrayList<>();
+        //Add an indicator that the card is a combat art and help to know its category
+        if (this.tags.contains(customEnums.COMBAT_ART_STARTER) || this.tags.contains(customEnums.COMBAT_ART_T1)) {
+            descriptors.add("CombatArtT1");
+        } else if (this.tags.contains(customEnums.COMBAT_ART_T2)) {
+            descriptors.add("CombatArtT2");
+        }else if (this.tags.contains(customEnums.COMBAT_ART_T3)) {
+            descriptors.add("CombatArtT3");
+        }
+
+
+        return descriptors;
+    }
 
     //S'occupe des coûts élémentaires et en SP ainsi que le gain de SP avec l'attaque
     protected void useCost(CrosscodeCharacter p){

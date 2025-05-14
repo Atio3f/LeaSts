@@ -1,10 +1,11 @@
 package Lea;
+
 import Lea.cards.*;
-import Lea.cards.arts.starter.BulletRain;
-import Lea.cards.arts.starter.SphereSaw;
 import Lea.cards.arts.T2.AmberBreaker;
 import Lea.cards.arts.T2.VolcanoCrash;
 import Lea.cards.arts.T3.OneMoreTime;
+import Lea.cards.arts.starter.BulletRain;
+import Lea.cards.arts.starter.SphereSaw;
 import Lea.cards.companions.Ctron;
 import Lea.cards.companions.Emilienator;
 import Lea.cards.companions.Hackgey;
@@ -198,7 +199,7 @@ public class LeaMod implements CharacterMod{
 
     @Override
     public void receiveEditCharacters() {
-        //J'le fais dans LeaCrosscode à voir pour restructurer comme le reste quand y'aura plusieurs persos.
+        //J'le fais dans Lea.LeaCrosscode à voir pour restructurer comme le reste quand y'aura plusieurs persos.
     }
 
     @Override
@@ -284,3 +285,4 @@ public class LeaMod implements CharacterMod{
 
 
 }
+

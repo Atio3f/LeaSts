@@ -47,6 +47,7 @@ public class Barrier extends CrosscodeCard {
         tags.add(customEnums.NEUTRAL);
         tags.add(customEnums.SHIELD);
         tags.add(customEnums.COMBAT_ART);
+
     }
 
     @Override

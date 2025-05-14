@@ -2,7 +2,8 @@ package Lea.characters;
 
 import java.util.ArrayList;
 
-
+import Lea.Abstracts.CrosscodeCard;
+import Lea.LeaMod;
 import Lea.Abstracts.CrosscodeCharacter;
 import Lea.cards.Hit;
 import basemod.BaseMod;
@@ -30,6 +31,7 @@ import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.random.Random;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 
@@ -61,7 +63,7 @@ public class Lea extends CrosscodeCharacter {
         "img/Lea/orbs/layer5d.png",
     };
     public static final Logger logger = LogManager.getLogger(Lea.class.getName());
-    public static final Color COBALT = CardHelper.getColor(45.0f, 27.0f, 175.0f);   //A changer si on change celui dans LeaMod
+    public static final Color COBALT = CardHelper.getColor(45.0f, 27.0f, 175.0f);   //A changer si on change celui dans Lea.LeaMod
 
 
     public Lea (String name) {
@@ -97,9 +99,11 @@ public class Lea extends CrosscodeCharacter {
         cartes.add("leacrosscode:OverloadCooling");
         cartes.add("leacrosscode:MemoryLost");
 
-        cartes.add("leacrosscode:SphereSaw");
         cartes.add("leacrosscode:VPRSpam");
-        LeaMod.combatArtStarterPool.getRandomCard
+
+        Random rng = Settings.seed != null ? new Random(Settings.seed) : new Random();
+        AbstractCard combatArtStart = LeaMod.combatArtStarterPool.getRandomCard(rng);
+        cartes.add(combatArtStart.cardID);
         System.out.println(cartes + "ENFIN9-----------------------------------------------------------------------------------------------------------------------------\n\n");
         return cartes;
     }
@@ -203,7 +207,7 @@ public class Lea extends CrosscodeCharacter {
 
     @Override
     public Color getSlashAttackColor() {
-        return CardHelper.getColor(45.0f, 27.0f, 175.0f);   //Changer si jamais on change dans LeaMod la couleur du Cobalt
+        return CardHelper.getColor(45.0f, 27.0f, 175.0f);   //Changer si jamais on change dans Lea.LeaMod la couleur du Cobalt
     }
 
     @Override

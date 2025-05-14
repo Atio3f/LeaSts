@@ -4,10 +4,10 @@
 
 <groupId>LeaCrosscode</groupId>
 <artifactId>LeaCrosscode</artifactId>
-<version>0.1.8</version>
+<version>0.1.85</version>
 <packaging>jar</packaging>
 
-<name>LeaCrosscode</name>
+<name>Lea.LeaCrosscode</name>
 <description>Tentative de refaire Léa dans Slay The Spire avec un gameplay proche de celui de Spheromancer.</description>
 
   <properties>
@@ -52,7 +52,7 @@
 </dependencies>
 
 <build>
-    <finalName>LeaCrosscode</finalName>
+    <finalName>Lea.LeaCrosscode</finalName>
     <plugins>
         <plugin>
             <groupId>org.apache.maven.plugins</groupId>
@@ -72,7 +72,7 @@
                     <phase>package</phase>
                     <configuration>
                         <target>
-                            <copy file="target/LeaCrosscode.jar" tofile="E:/Jeux/steamapps/common/SlayTheSpire/mods/LeaCrosscode.jar"/>
+                            <copy file="target/Lea.LeaCrosscode.jar" tofile="E:/Jeux/steamapps/common/SlayTheSpire/mods/Lea.LeaCrosscode.jar"/>
                         </target>
                     </configuration>
                     <goals>

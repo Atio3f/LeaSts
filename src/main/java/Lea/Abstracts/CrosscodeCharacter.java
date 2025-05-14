@@ -97,17 +97,23 @@ public abstract class CrosscodeCharacter extends CustomPlayer {
             LogManager.getLogger(Lea.class.getName()).info("SPENDING ELEMENTAL" + hasEnoughElem(elementCard, elementalCost));
             if (!hasEnoughElem(elementCard, elementalCost)){
                 AbstractPower power;
+
                 switch (elementsStatus[indexElem]) {
                     case "Burn":
                         power = new BurnPower(this, this, elementalCost - elementsValeur[indexElem]); // Crée une instance de BurnPower
+                        break;
                     case "Chill":
                         power = new ChillPower(this, this, elementalCost - elementsValeur[indexElem]); // Crée une instance de ChillPower
+                        break;
                     case "Jolt":
                         power = new JoltPower(this, this, elementalCost - elementsValeur[indexElem]); // Crée une instance de JoltPower
+                        break;
                     case "Mark":
                         power = new MarkPower(this, this, elementalCost - elementsValeur[indexElem]); // Crée une instance de MarkPower
+                        break;
                     default:
-                        power = new ProtectionPower(this, 50);
+                        LogManager.getLogger(Lea.class.getName()).error("ELEMENTAL USE: "+elementsStatus[indexElem] + " index :"+ indexElem);
+                        power = new ProtectionPower(this, 50);  //Let me know quickly there is a problem
                 }
                 AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this,
                     this, power, elementalCost - elementsValeur[indexElem], true, AbstractGameAction.AttackEffect.NONE));
