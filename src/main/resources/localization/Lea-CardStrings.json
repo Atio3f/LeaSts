@@ -1,4 +1,11 @@
 {
+  "leacrosscode:card": {
+    "EXTENDED_DESCRIPTION": [
+      "Combat Art T1",
+      "Combat Art T2",
+      "Combat Art T3"
+    ]
+  },
   "leacrosscode:Hit": {
     "NAME": "Hit",
     "DESCRIPTION": "Deal !D! damage to the front ennemi. Gain !SP_G! SP.",
@@ -156,6 +163,13 @@
     "NAME": "Emilienator",
     "DESCRIPTION": "At the end of each turn, deal !M! melee damage to the front ennemi.",
     "UPGRADE_DESCRIPTION": "At the end of each turn, deal !M! melee damage to the front ennemi."
+  },"leacrosscode:CircuitPoint": {
+    "NAME": "Circuit Point",
+    "DESCRIPTION": "Gain a card reward. Each card has 65% to be T1 and 35% T2 Combat Art.",
+    "UPGRADE_DESCRIPTION": "Gain a card reward. Each card has 50% to be T1, 40% T2 and 10% T3 Combat Art."
+  },"leacrosscode:FrozenStance": {
+    "NAME": "Frozen Stance",
+    "DESCRIPTION": "Gain !B! Block and !M! Protection. Apply !M! weak and !M! chill to all ennemis who intends to attack you."
   }
 
 }

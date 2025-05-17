@@ -1,6 +1,7 @@
 package Lea;
 
 import Lea.cards.*;
+import Lea.cards.arts.T1.FrozenStance;
 import Lea.cards.arts.T2.AmberBreaker;
 import Lea.cards.arts.T2.VolcanoCrash;
 import Lea.cards.arts.T3.OneMoreTime;
@@ -172,6 +173,8 @@ public class LeaMod implements CharacterMod{
         cards.add(new AFK());
         cards.add(new Ctron());
         cards.add(new Emilienator());
+        cards.add(new CircuitPoint());
+        cards.add(new FrozenStance());
         //Place receiveEditCards from caracters here with the cards variable on it
 
         combatArtStarterPool = new CardGroup(CardGroup.CardGroupType.CARD_POOL);
@@ -183,8 +186,11 @@ public class LeaMod implements CharacterMod{
             if (c.rarity == customEnums.COMBAT_ART_STARTER) {
                 combatArtStarterPool.addToBottom(c.makeCopy());
             }else if(c.rarity == customEnums.COMBAT_ART_T1){
-                combatArtStarterPool.addToBottom(c.makeCopy());
-
+                combatArtT1Pool.addToBottom(c.makeCopy());
+            }else if(c.rarity == customEnums.COMBAT_ART_T2){
+                combatArtT2Pool.addToBottom(c.makeCopy());
+            }else if(c.rarity == customEnums.COMBAT_ART_T3){
+                combatArtT3Pool.addToBottom(c.makeCopy());
             }
         }
         for(CustomCard card : cards) {

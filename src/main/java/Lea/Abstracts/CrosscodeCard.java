@@ -2,15 +2,20 @@ package Lea.Abstracts;
 
 import Lea.characters.Lea;
 import Lea.enums.customEnums;
+import Lea.patches.LeaEnum;
 import basemod.abstracts.CustomCard;
 import com.evacipated.cardcrawl.mod.stslib.variables.ExhaustiveVariable;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 
@@ -21,7 +26,8 @@ public abstract class CrosscodeCard extends CustomCard {
 
     protected int ElementalCost = -1;  //Indique le coût en énergie de la carte -> -1 == pas de coût
     protected String ElementCard = "Neutral";
-
+    private static CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings("leacrosscode:card");
+    protected static String[] EXTENDED_DESCRIPTION = {cardStrings.EXTENDED_DESCRIPTION[0], cardStrings.EXTENDED_DESCRIPTION[1], cardStrings.EXTENDED_DESCRIPTION[2]};
     public CrosscodeCard(String id, String name, String img, int cost, String rawDescription, CardType type, CardColor color, CardRarity rarity, CardTarget target, int sp_cost, int sp_gain, int elementalCost) {
         super(id, name, img, cost, rawDescription, type, color, rarity, target);
         SP_Cost = sp_cost;
@@ -58,19 +64,16 @@ public abstract class CrosscodeCard extends CustomCard {
 
     @Override
     public List<String> getCardDescriptors() {
-        List<String> descriptors = new ArrayList<>();
-        //Add an indicator that the card is a combat art and help to know its category
-        if (this.tags.contains(customEnums.COMBAT_ART_STARTER) || this.tags.contains(customEnums.COMBAT_ART_T1)) {
-            descriptors.add("CombatArtT1");
-        } else if (this.tags.contains(customEnums.COMBAT_ART_T2)) {
-            descriptors.add("CombatArtT2");
-        }else if (this.tags.contains(customEnums.COMBAT_ART_T3)) {
-            descriptors.add("CombatArtT3");
+        if (rarity == customEnums.COMBAT_ART_STARTER | rarity == customEnums.COMBAT_ART_T1 ) {
+            return Collections.singletonList(EXTENDED_DESCRIPTION[0]);
+        } else if (rarity == customEnums.COMBAT_ART_T2) {
+            return Collections.singletonList(EXTENDED_DESCRIPTION[1]);
+        } else if (rarity == customEnums.COMBAT_ART_T3) {
+            return Collections.singletonList(EXTENDED_DESCRIPTION[2]);
         }
-
-
-        return descriptors;
+        return Collections.emptyList();
     }
+
 
     //S'occupe des coûts élémentaires et en SP ainsi que le gain de SP avec l'attaque
     protected void useCost(CrosscodeCharacter p){

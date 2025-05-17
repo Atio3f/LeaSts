@@ -48,7 +48,7 @@ public class Emilienator extends CrosscodeCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new ApplyPowerAction(m, p, new EmilienatorPower(p, this.magicNumber), this.magicNumber));
+        this.addToBot(new ApplyPowerAction(p, p, new EmilienatorPower(p, this.magicNumber), this.magicNumber));
 
         super.use(p, m);
     }

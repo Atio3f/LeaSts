@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.powers.VulnerablePower;
 
 public class EmilienatorPower extends AbstractPower {
     public static final String POWER_ID = "EmilienatorPower";
@@ -61,8 +62,13 @@ public class EmilienatorPower extends AbstractPower {
             if(target.hasPower("leacrosscode:BurnPower")){
                 multiplier += target.getPower("leacrosscode:BurnPower").amount * 0.1;
             }
+            if (target.hasPower("Vulnerable")) {
+
+                multiplier *= 1.5f;
+            }
+
             addToBot(new DamageAction(target,
-                new DamageInfo(source, this.amount * multiplier, DamageInfo.DamageType.NORMAL),
+                new DamageInfo(target, this.amount * multiplier, DamageInfo.DamageType.NORMAL),
                 AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
         }
 

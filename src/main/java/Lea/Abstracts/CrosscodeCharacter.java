@@ -1,11 +1,13 @@
 package Lea.Abstracts;
 
+import Lea.cards.AFK;
 import Lea.characters.Lea;
 import Lea.powers.*;
 import basemod.abstracts.CustomPlayer;
 import basemod.animations.AbstractAnimation;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.ui.panels.energyorb.EnergyOrbInterface;
@@ -142,6 +144,11 @@ public abstract class CrosscodeCharacter extends CustomPlayer {
 
     public void gainSP(int SP_gain){
         SP_fight = ((SP_fight + SP_gain) > Max_SP) ? Max_SP : SP_fight + SP_gain;
+    }
+
+    @Override
+    public AbstractCard getStartCardForEvent() {
+        return new AFK();
     }
 
 }

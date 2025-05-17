@@ -34,7 +34,7 @@ public class FieryTitansGauntlet extends CrosscodeRelic {
     }
 
     @Override
-    public void onObtainCard(AbstractCard c) {
+    public void onEquip() {
         ArrayList<AbstractCard> masterDeck = AbstractDungeon.player.masterDeck.group;
         Logger logger = LogManager.getLogger(Lea.class.getName());
         logger.info("FIERY TITANS GAUNTLET TEST" + DESCRIPTION + "---------------------------------------------------------------------------------------------------------------------------------\n\n");
@@ -55,7 +55,7 @@ public class FieryTitansGauntlet extends CrosscodeRelic {
 
             }
         }
-        super.onObtainCard(c);
+        super.onEquip();
     }
 }
 
