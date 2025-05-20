@@ -45,13 +45,12 @@ public class LimitlessSpam extends CrosscodeCard {
         logger.info("LimitlessSpam" + DESCRIPTION + "---------------------------------------------------------------------------------------------------------------------------------\n\n");
         magicNumber = baseMagicNumber = TEMP_STRENGTH;
         tags.add(customEnums.NEUTRAL);
-        this.exhaust = true;
 
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new LimitlessSpamPower(p, p, this.magicNumber), this.magicNumber, true, AbstractGameAction.AttackEffect.NONE));
+        addToBot(new ApplyPowerAction(p, p, new LimitlessSpamPower(p, p, this.magicNumber), this.magicNumber, true, AbstractGameAction.AttackEffect.NONE));
         if(this.upgraded){
             //Ajoute un BULLET dans la main quand upgrade
             Bullet b = new Bullet();

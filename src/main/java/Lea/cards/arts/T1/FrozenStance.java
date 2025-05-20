@@ -50,7 +50,7 @@ public class FrozenStance extends CrosscodeCard {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
             AbstractCard.CardType.SKILL, AbstractCardEnum.LEA_COBALT,
             customEnums.COMBAT_ART_T1, CardTarget.SELF, SP_COST, SP_GAIN, COLD_COST);
-        logger.info("BulletRain" + DESCRIPTION + "---------------------------------------------------------------------------------------------------------------------------------\n\n");
+        logger.info("FrozenStance" + DESCRIPTION + "---------------------------------------------------------------------------------------------------------------------------------\n\n");
         this.block=this.baseBlock = BLOCK_VALUE;
         this.magicNumber = this.baseMagicNumber = EFFECTS_VALUE;
 

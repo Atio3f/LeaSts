@@ -6,7 +6,7 @@ import Lea.enums.TypeDegats;
 import Lea.enums.customEnums;
 import Lea.patches.AbstractCardEnum;
 import Lea.powers.JoltPower;
-import com.evacipated.cardcrawl.mod.stslib.actions.common.AllEnemyApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -52,10 +52,13 @@ public class StaticDash extends CrosscodeCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, this.block));
-        AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, this.magicNumber));
-        AbstractDungeon.actionManager.addToBottom(new AllEnemyApplyPowerAction(p,this.magicNumber+1,
-            (q) -> new JoltPower(q, p, this.magicNumber+1))); //En gros q ça va contenir chacun des monstres à tour de rôle
+        addToBot(new GainBlockAction(p, p, this.block));
+        addToBot(new DrawCardAction(p, this.magicNumber));
+        for(AbstractMonster monster : AbstractDungeon.getMonsters().monsters){
+            if(!monster.isDeadOrEscaped()){
+                addToBot(new ApplyPowerAction(monster, p, new JoltPower(monster, p, this.magicNumber + 1)));
+            }
+        }
         super.use(p, m);
     }
 

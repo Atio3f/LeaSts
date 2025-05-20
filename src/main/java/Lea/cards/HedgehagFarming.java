@@ -15,8 +15,8 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-
-//Permanently upgrade a card 2 times, remove the card from your deck. Exhaust
+//Will be on an event
+//Permanently upgrade a card 2 times, remove the card from your deck. Fleeting c'est la même chose nan?
 public class HedgehagFarming extends CrosscodeCard {
     public static final String ID = "leacrosscode:HedgehagFarming";
     private static CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
@@ -37,7 +37,7 @@ public class HedgehagFarming extends CrosscodeCard {
     public HedgehagFarming() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
             AbstractCard.CardType.SKILL, AbstractCardEnum.LEA_COBALT,
-            CardRarity.RARE,CardTarget.SELF, SP_COST, SP_GAIN);
+            CardRarity.SPECIAL,CardTarget.SELF, SP_COST, SP_GAIN);
         logger.info("HedgehagFarming" + DESCRIPTION + "---------------------------------------------------------------------------------------------------------------------------------\n\n");
         this.magicNumber = this.baseMagicNumber = NUMBER_UPGRADE;
 

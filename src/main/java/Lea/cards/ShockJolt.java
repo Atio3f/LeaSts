@@ -67,8 +67,13 @@ public class ShockJolt extends CrosscodeCard {
             this.damage, DamageInfo.DamageType.NORMAL,
             AbstractGameAction.AttackEffect.LIGHTNING));
 
-        AbstractDungeon.actionManager.addToBottom(new AllEnemyApplyPowerAction(p,this.magicNumber,
-            (q) -> new JoltPower(q, p, this.magicNumber))); //En gros q ça va contenir chacun des monstres à tour de rôle
+        //AbstractDungeon.actionManager.addToBottom(new AllEnemyApplyPowerAction(p,this.magicNumber,
+        //    (q) -> new JoltPower(q, p, this.magicNumber))); //En gros q ça va contenir chacun des monstres à tour de rôle
+        for(AbstractMonster monster : AbstractDungeon.getMonsters().monsters){
+            if(!monster.isDeadOrEscaped()){
+                addToBot(new ApplyPowerAction(monster, p, new JoltPower(monster, p, this.magicNumber)));
+            }
+        }
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p,
             p, new JoltPower(p, p, this.magicNumber), this.magicNumber, true, AbstractGameAction.AttackEffect.BLUNT_LIGHT));
 

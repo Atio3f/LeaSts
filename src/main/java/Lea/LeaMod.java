@@ -2,6 +2,7 @@ package Lea;
 
 import Lea.cards.*;
 import Lea.cards.arts.T1.FrozenStance;
+import Lea.cards.arts.T1.ThunderDart;
 import Lea.cards.arts.T2.AmberBreaker;
 import Lea.cards.arts.T2.VolcanoCrash;
 import Lea.cards.arts.T3.OneMoreTime;
@@ -175,6 +176,12 @@ public class LeaMod implements CharacterMod{
         cards.add(new Emilienator());
         cards.add(new CircuitPoint());
         cards.add(new FrozenStance());
+        cards.add(new PhantomDash());
+        cards.add(new PentafistStyle());
+        cards.add(new TribladerStyle());
+        cards.add(new QuadroguardStyle());
+        cards.add(new GumGum());
+        cards.add(new ThunderDart());
         //Place receiveEditCards from caracters here with the cards variable on it
 
         combatArtStarterPool = new CardGroup(CardGroup.CardGroupType.CARD_POOL);

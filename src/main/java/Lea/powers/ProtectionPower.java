@@ -15,7 +15,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.watcher.VigorPower;
 
 public class ProtectionPower extends AbstractPower {
-    public static final String POWER_ID = "ProtectionPower";
+    public static final String POWER_ID = "leacrosscode:ProtectionPower";
     public static final String NAME = "Protection";
     public static final String[] DESCRIPTIONS = new String[]{
         "Reduce damage takes by attacks per !S!."   //!S! remplacé par stacks + 1 dans la fonction updateDescription
@@ -41,7 +41,13 @@ public class ProtectionPower extends AbstractPower {
 
     @Override
     public void atStartOfTurn() {
-        this.addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, "ProtectionPower"));
+        if(owner.isPlayer && owner.hasPower("leacrosscode:QuadroguardStylePower")) {
+            int reduceAmount = owner.getPower("leacrosscode:ProtectionPower").amount / owner.getPower("leacrosscode:QuadroguardStylePower").amount;
+            addToBot(new ReducePowerAction(owner, owner, "leacrosscode:ProtectionPower", reduceAmount > 1 ? reduceAmount : 1 ));
+
+        }else{
+            this.addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, "leacrosscode:ProtectionPower"));
+        }
     }
 
     public float atDamageReceive(float damage, DamageInfo.DamageType type) {

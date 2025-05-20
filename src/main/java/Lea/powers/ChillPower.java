@@ -9,7 +9,7 @@ public class ChillPower  extends AbstractPower {
     public static final String POWER_ID = "ChillPower";
     public static final String NAME = "Chill";
     public static final String[] DESCRIPTIONS = new String[] {
-        "When hit by ",
+        "DESC A CHANGER When hit by ",
         " Vulnerable and ",
         " Weak to the attacker."
     };
@@ -49,4 +49,8 @@ public class ChillPower  extends AbstractPower {
         }
     }
 
+    @Override
+    public void updateDescription() {
+        this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1];
+    }
 }

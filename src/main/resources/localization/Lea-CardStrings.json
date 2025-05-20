@@ -165,11 +165,30 @@
     "UPGRADE_DESCRIPTION": "At the end of each turn, deal !M! melee damage to the front ennemi."
   },"leacrosscode:CircuitPoint": {
     "NAME": "Circuit Point",
-    "DESCRIPTION": "Gain a card reward. Each card has 65% to be T1 and 35% T2 Combat Art.",
-    "UPGRADE_DESCRIPTION": "Gain a card reward. Each card has 50% to be T1, 40% T2 and 10% T3 Combat Art."
+    "DESCRIPTION": "Gain a card reward. Each card has 65% to be T1 and 35% T2 Combat Art. Remove it from your deck.",
+    "UPGRADE_DESCRIPTION": "Gain a card reward. Each card has 50% to be T1, 40% T2 and 10% T3 Combat Art. Remove it from your deck."
   },"leacrosscode:FrozenStance": {
     "NAME": "Frozen Stance",
     "DESCRIPTION": "Gain !B! Block and !M! Protection. Apply !M! weak and !M! chill to all ennemis who intends to attack you."
+  },"leacrosscode:PhantomDash": {
+    "NAME": "Phantom Dash",
+    "DESCRIPTION": "Gain !B! Block and !M! Blur. Permanently increase this card's Block by 1. NL Exhaust."
+  },"leacrosscode:PentafistStyle": {
+    "NAME": "Pentafist Style",
+    "DESCRIPTION": "Gain !M! Dexterity. Each time you play a dash, you gain 1 Protection."
+  },"leacrosscode:TribladerStyle": {
+      "NAME": "Triblader Style",
+      "DESCRIPTION": "Vigor proc twice on melee attack. Gain 5 Vigor.",
+      "UPGRADE_DESCRIPTION": "Innate NL Vigor proc twice on melee attack. Gain !M! Vigor."
+  },"leacrosscode:QuadroguardStyle": {
+    "NAME": "Quadroguard Style",
+    "DESCRIPTION": "Gain !M! Protection. Protection are divide by 2 at the start of your turn."
+  },"leacrosscode:GumGum": {
+    "NAME": "GumGum",
+    "DESCRIPTION": "+3 Wave -2 Shock NL Gain !B! Block but lose 1 Protection."
+  },"leacrosscode:ThunderDart": {
+    "NAME": "Thunder Dart",
+    "DESCRIPTION": "Gain !B! Block. NL Deal !D! damage and apply !M! Jolt to ALL ennemies."
   }
 
 }

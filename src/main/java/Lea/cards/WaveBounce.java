@@ -7,7 +7,6 @@ import Lea.enums.customEnums;
 import Lea.patches.AbstractCardEnum;
 import Lea.powers.MarkPower;
 import Lea.powers.TargetPower;
-import com.evacipated.cardcrawl.mod.stslib.actions.common.AllEnemyApplyPowerAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;

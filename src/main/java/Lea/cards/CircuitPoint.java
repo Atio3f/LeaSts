@@ -82,6 +82,13 @@ public class CircuitPoint extends CrosscodeCard implements OnObtainCard{
             reward.cards.addAll(rewardCards);
             AbstractDungeon.combatRewardScreen.rewards.add(reward);
         }
+        //Delete the card from your deck once you got the screen reward
+        for (AbstractCard carteDeck : AbstractDungeon.player.masterDeck.group) {
+            if (carteDeck.uuid == this.uuid) {
+                AbstractDungeon.player.masterDeck.removeCard(carteDeck);
+                break;
+            }
+        }
     }
 
     @Override
