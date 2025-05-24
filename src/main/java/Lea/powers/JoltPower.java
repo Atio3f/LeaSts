@@ -20,7 +20,7 @@ import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import org.apache.logging.log4j.LogManager;
 
 public class JoltPower  extends AbstractPower {
-    public static final String POWER_ID = "JoltPower";
+    public static final String POWER_ID = "leacrosscode:JoltPower";
     public static final String NAME = "Jolt";
     public static final String[] DESCRIPTIONS = new String[] {
         "At the beginning of its turn, take",
@@ -76,12 +76,12 @@ public class JoltPower  extends AbstractPower {
             this.justApplied = false;
         } else {
             if (this.amount < 2) {
-                this.addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, "JoltPower"));
+                this.addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, "leacrosscode:JoltPower"));
             } else {
                 if (this.amount < 6){
-                    this.addToBot(new ReducePowerAction(this.owner, this.owner, "JoltPower", 2));
+                    this.addToBot(new ReducePowerAction(this.owner, this.owner, "leacrosscode:JoltPower", 2));
                 }
-                this.addToBot(new ReducePowerAction(this.owner, this.owner, "JoltPower", this.amount / 3));
+                this.addToBot(new ReducePowerAction(this.owner, this.owner, "leacrosscode:JoltPower", this.amount / 3));
             }
         }
     }
@@ -104,7 +104,7 @@ public class JoltPower  extends AbstractPower {
 
     @Override
     public void updateDescription() {
-        this.description = DESCRIPTIONS[0] + (this.amount + 1) + DESCRIPTIONS[1];
+        this.description = DESCRIPTIONS[0] + (this.amount * 2) + DESCRIPTIONS[1];
         if(amount >= 5){
             description += DESCRIPTIONS[2];
         }

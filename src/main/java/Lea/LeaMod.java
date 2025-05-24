@@ -1,11 +1,13 @@
 package Lea;
 
 import Lea.cards.*;
+import Lea.cards.arts.T1.DivingSpark;
 import Lea.cards.arts.T1.FrozenStance;
 import Lea.cards.arts.T1.ThunderDart;
 import Lea.cards.arts.T2.AmberBreaker;
 import Lea.cards.arts.T2.VolcanoCrash;
 import Lea.cards.arts.T3.OneMoreTime;
+import Lea.cards.arts.starter.Barrier;
 import Lea.cards.arts.starter.BulletRain;
 import Lea.cards.arts.starter.SphereSaw;
 import Lea.cards.companions.Ctron;
@@ -182,6 +184,10 @@ public class LeaMod implements CharacterMod{
         cards.add(new QuadroguardStyle());
         cards.add(new GumGum());
         cards.add(new ThunderDart());
+        cards.add(new DivingSpark());
+        cards.add(new HexacastStyle());
+        cards.add(new Barrier());
+        cards.add(new VoiceAmplifier());
         //Place receiveEditCards from caracters here with the cards variable on it
 
         combatArtStarterPool = new CardGroup(CardGroup.CardGroupType.CARD_POOL);

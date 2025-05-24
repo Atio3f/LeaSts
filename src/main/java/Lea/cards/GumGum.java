@@ -26,8 +26,8 @@ public class GumGum extends CrosscodeCard {
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String IMG_PATH = "img/Lea/cards/Hit&Block.png";    //IMAGE A CHANGER
     private static final int COST = 1;
-    private static final int BLOCK_AMT = 8;
-    private static final int UPGRADE_BLOCK_AMT = 3;
+    private static final int BLOCK_AMT = 9;
+    private static final int UPGRADE_BLOCK_AMT = 4;
     private static final int PROT_REDUCTION = 1;
     private static final int SP_COST = 0;
     private static final int SP_GAIN = 0;
@@ -35,7 +35,7 @@ public class GumGum extends CrosscodeCard {
     private static final int SHOCK_LOSE = -2;
     private static final Integer[] elementsGain = {0, 0, SHOCK_LOSE, WAVE_GAIN};
 
-    private static final TypeDegats TYPE_DEGATS = TypeDegats.NEUTRAL;
+    private static final TypeDegats TYPE_DEGATS = TypeDegats.WAVE;
     public static final Logger logger = LogManager.getLogger(Lea.class.getName());
     public GumGum() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,

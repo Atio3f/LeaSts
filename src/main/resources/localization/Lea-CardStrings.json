@@ -189,6 +189,18 @@
   },"leacrosscode:ThunderDart": {
     "NAME": "Thunder Dart",
     "DESCRIPTION": "Gain !B! Block. NL Deal !D! damage and apply !M! Jolt to ALL ennemies."
+  },"leacrosscode:DivingSpark": {
+    "NAME": "Diving Spark",
+    "DESCRIPTION": "Deal !D! damage and apply !M! Jolt. NL Consume its Jolt to deal him 3 Shock damage per stack consumed."
+  },"leacrosscode:HexacastStyle": {
+    "NAME": "Hexacast Style",
+    "DESCRIPTION": "Apply !M! Mark to a random ennemi when you play a BULLET. NL Protection don't protect you anymore and instead gives you Block."
+  },"leacrosscode:Barrier": {
+    "NAME": "Barrier",
+    "DESCRIPTION": "Gain !B! Block and 3 Protection. NL At the start of your turn, transform your prot x !M! into block."
+  },"leacrosscode:VoiceAmplifier": {
+    "NAME": "Voice Amplifier",
+    "DESCRIPTION": "+3 Wave. NL Gain !M! Strength."
   }
 
 }

@@ -5,6 +5,7 @@ import Lea.enums.customEnums;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -20,7 +21,10 @@ public class ProtectionPower extends AbstractPower {
     public static final String[] DESCRIPTIONS = new String[]{
         "Reduce damage takes by attacks per !S!."   //!S! remplacé par stacks + 1 dans la fonction updateDescription
     };
-
+    public static final String[] DESCRIPTIONS_HEXA = new String[]{
+        "Gain ",
+        " Block at the end of your turn."
+    };
     private boolean justApplied = false;
     private static final int BASE_VALUE = 1; //Valeur de base de dégâts réduits sans compter le nombre de stacks
 
@@ -31,6 +35,7 @@ public class ProtectionPower extends AbstractPower {
         this.amount = amount;
         updateDescription();
         this.type = PowerType.BUFF;
+        this.canGoNegative = true;
         this.isTurnBased = true;
         this.priority = 80;
         this.img = new Texture("img/Lea/powers/ProtectionPower.png");
@@ -50,6 +55,12 @@ public class ProtectionPower extends AbstractPower {
         }
     }
 
+    @Override
+    public void atEndOfTurn(boolean isPlayer){
+        if(this.owner != null && this.owner.isPlayer && owner.hasPower("leacrosscode:HexacastStylePower")){
+            addToTop(new GainBlockAction(owner, amount));
+        }
+    }
     public float atDamageReceive(float damage, DamageInfo.DamageType type) {
         float damageFinal = damage ;//> (BASE_VALUE + amount) ? damage - (BASE_VALUE + amount) : 0;
 
@@ -76,6 +87,9 @@ public class ProtectionPower extends AbstractPower {
     }
 
     public int onAttacked(DamageInfo info, int damageAmount) {
+        if(this.owner != null && this.owner.isPlayer && owner.hasPower("leacrosscode:HexacastStylePower")){
+            return damageAmount;
+        }
         int damageFinal = damageAmount > (BASE_VALUE + amount) ? damageAmount - (BASE_VALUE + amount) : 0;
         if(this.owner != null && this.owner.isPlayer && AbstractDungeon.player.hasRelic("leacrosscode:MartialCounterAttack")){
             int amountVigor = (int) (damageAmount - damageFinal); // Si le joueur a la relique Counter Playstyle, il gagne de la vigueur pour chaque dégât absorbé
@@ -91,8 +105,12 @@ public class ProtectionPower extends AbstractPower {
 
     @Override
     public void updateDescription() {
-
-        this.description = DESCRIPTIONS[0].replace("!S!", Integer.toString(this.amount + BASE_VALUE));
+        //Protection doesn't have the same effect when player have the HexacastStylePower
+        if(this.owner != null && this.owner.isPlayer && AbstractDungeon.player.hasPower("leacrosscode:HexacastStylePower")){
+            this.description = DESCRIPTIONS_HEXA[0] + amount + DESCRIPTIONS_HEXA[1];
+        }else{
+            this.description = DESCRIPTIONS[0].replace("!S!", Integer.toString(this.amount + BASE_VALUE));
+        }
 
     }
 }

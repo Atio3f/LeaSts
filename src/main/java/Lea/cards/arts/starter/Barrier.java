@@ -5,6 +5,7 @@ import Lea.characters.Lea;
 import Lea.enums.TypeDegats;
 import Lea.enums.customEnums;
 import Lea.patches.AbstractCardEnum;
+import Lea.powers.BarrierPower;
 import Lea.powers.ProtectionPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -27,7 +28,7 @@ public class Barrier extends CrosscodeCard {
     public static final String IMG_PATH = "img/Lea/cards/Hit&Block.png";    //IMAGE A CHANGER
     private static final int COST = 1;
     private static final int BLOCK_VALUE = 4;
-    private static final int UPGRADE_PLUS_BLOCK = 2;
+    private static final int UPGRADE_PLUS_BLOCK = 3;
     private static final int PROT_VALUE = 3;
     private static final int CONVERSION_VALUE = 2;
     private static final int UPGRADE_PLUS_CONV = 1;
@@ -56,8 +57,8 @@ public class Barrier extends CrosscodeCard {
             p, this.block));
         addToBot(new ApplyPowerAction(p,
             p, new ProtectionPower(p, this.PROT_VALUE), this.PROT_VALUE, true, AbstractGameAction.AttackEffect.SHIELD));
-        addToBot(new GainBlockAction(p,
-            p, this.block));
+        addToBot(new ApplyPowerAction(p,
+            p, new BarrierPower(p, this.magicNumber), this.magicNumber, false, AbstractGameAction.AttackEffect.SHIELD));
 
         super.use(p, m);
     }

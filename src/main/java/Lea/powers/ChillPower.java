@@ -1,12 +1,14 @@
 package Lea.powers;
 
 import com.badlogic.gdx.graphics.Texture;
+import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
+import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
 public class ChillPower  extends AbstractPower {
-    public static final String POWER_ID = "ChillPower";
+    public static final String POWER_ID = "leacrosscode:ChillPower";
     public static final String NAME = "Chill";
     public static final String[] DESCRIPTIONS = new String[] {
         "DESC A CHANGER When hit by ",
@@ -46,6 +48,19 @@ public class ChillPower  extends AbstractPower {
         this.img = new Texture("img/Lea/powers/ChillPower.png");
         if (AbstractDungeon.actionManager.turnHasEnded) {
             this.justApplied = true;
+        }
+    }
+
+    @Override
+    public void atStartOfTurn(){
+        if (this.justApplied) {
+            this.justApplied = false;
+        } else {
+            if (this.amount < 2) {
+                this.addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, "leacrosscode:ChillPower"));
+            } else {
+                this.addToBot(new ReducePowerAction(this.owner, this.owner, "leacrosscode:ChillPower", 1));
+            }
         }
     }
 

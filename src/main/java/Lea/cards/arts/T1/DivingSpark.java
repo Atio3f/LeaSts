@@ -1,17 +1,14 @@
 package Lea.cards.arts.T1;
 
 import Lea.Abstracts.CrosscodeCard;
+import Lea.Abstracts.CrosscodeDamageInfo;
 import Lea.characters.Lea;
 import Lea.enums.TypeDegats;
 import Lea.enums.customEnums;
 import Lea.patches.AbstractCardEnum;
-import Lea.powers.ChillPower;
 import Lea.powers.JoltPower;
-import Lea.powers.ProtectionPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -19,39 +16,36 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.WeakPower;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class ThunderDart extends CrosscodeCard {
-    public static final String ID = "leacrosscode:ThunderDart";
+public class DivingSpark extends CrosscodeCard {
+    public static final String ID = "leacrosscode:DivingSpark";
     private static CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 
     // Get object containing the strings that are displayed in the game.
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String IMG_PATH = "img/Lea/cards/VPRCharge.png";        //IMAGE A CHANGER
-    private static final int COST = 1;
-    private static final int ATTACK_DMG = 6;
+    private static final int COST = 2;
+    private static final int ATTACK_DMG = 8;
     private static final int UPGRADE_PLUS_DMG = 2;
-    private static final int BLOCK_VALUE = 6;
-    private static final int UPGRADE_PLUS_BLOCK = 2;
     private static final int SP_COST = 3;
     private static final int SP_GAIN = 0;
 
     private static final int JOLT_AMT = 3;
     private static final int UPGRADE_PLUS_JOLT = 1;
-    private static final int SHOCK_COST = 2;
+    private static final int DMG_PER_JOLT = 3;
+    private static final int SHOCK_COST = 1;
 
     private static final TypeDegats TYPE_DEGATS = TypeDegats.SHOCK;
     public static final Logger logger = LogManager.getLogger(Lea.class.getName());
-    public ThunderDart() {
+    public DivingSpark() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
-            AbstractCard.CardType.SKILL, AbstractCardEnum.LEA_COBALT,
-            customEnums.COMBAT_ART_T1, CardTarget.ALL_ENEMY, SP_COST, SP_GAIN, SHOCK_COST);
-        logger.info("ThunderDart" + DESCRIPTION + "---------------------------------------------------------------------------------------------------------------------------------\n\n");
+            CardType.ATTACK, AbstractCardEnum.LEA_COBALT,
+            customEnums.COMBAT_ART_T1, CardTarget.ENEMY, SP_COST, SP_GAIN, SHOCK_COST);
+        logger.info("DivingSpark" + DESCRIPTION + "---------------------------------------------------------------------------------------------------------------------------------\n\n");
         this.damage = this.baseDamage = ATTACK_DMG;
-        this.block=this.baseBlock = BLOCK_VALUE;
         this.magicNumber = this.baseMagicNumber = JOLT_AMT;
 
 
@@ -65,14 +59,15 @@ public class ThunderDart extends CrosscodeCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
 
 
-        addToTop(new GainBlockAction(p, p, this.block));
-        addToTop(new DamageAllEnemiesAction(p,
-            this.damage, DamageInfo.DamageType.NORMAL,
+        addToTop(new DamageAction(m,
+            new CrosscodeDamageInfo(p, this.damage, this.damageTypeForTurn, tags),
             AbstractGameAction.AttackEffect.LIGHTNING));
-        for(AbstractMonster monster : AbstractDungeon.getMonsters().monsters){
-            if(!monster.isDeadOrEscaped()){
-                addToBot(new ApplyPowerAction(monster, p, new JoltPower(monster, p, this.magicNumber), this.magicNumber, true));
-            }
+        addToTop(new ApplyPowerAction(m, p, new JoltPower(m, p, this.magicNumber)));
+
+        if(m.hasPower("leacrosscode:JoltPower")){
+            int joltAmt = m.getPower("leacrosscode:JoltPower").amount;
+            this.addToBot(new LoseHPAction(m, p, joltAmt * DMG_PER_JOLT));
+            addToBot(new RemoveSpecificPowerAction(m, p, "leacrosscode:JoltPower"));
         }
 
         super.use(p, m);
@@ -81,8 +76,8 @@ public class ThunderDart extends CrosscodeCard {
 
     @Override
     public AbstractCard makeCopy() {
-        logger.info("ThunderDartCOPY---------------------------------------------------------------------------------------------------------------------------------\n\n");
-        return new ThunderDart();
+        logger.info("DivingSparkCOPY---------------------------------------------------------------------------------------------------------------------------------\n\n");
+        return new DivingSpark();
     }
 
     @Override
@@ -90,8 +85,8 @@ public class ThunderDart extends CrosscodeCard {
         if (!this.upgraded) {
             this.upgradeName();
             this.upgradeDamage(UPGRADE_PLUS_DMG);
-            this.upgradeBlock(UPGRADE_PLUS_BLOCK);
             this.upgradeMagicNumber(UPGRADE_PLUS_JOLT);
         }
     }
 }
+

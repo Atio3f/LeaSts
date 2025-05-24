@@ -2,6 +2,7 @@ package Lea.cards;
 
 import Lea.Abstracts.CrosscodeCard;
 import Lea.Abstracts.CrosscodeCharacter;
+import Lea.actions.RegainElementalAction;
 import Lea.characters.Lea;
 import Lea.enums.customEnums;
 import Lea.patches.AbstractCardEnum;
@@ -30,13 +31,14 @@ public class VoiceAmplifier extends CrosscodeCard {
     public static final String UPGRADE_DESC = cardStrings.UPGRADE_DESCRIPTION;
     public static final String IMG_PATH = "img/Lea/cards/Dash.png"; //IMAGE A MODIFIER
     private static final int COST = 1;
-
-    private static final int UPGRADE_PLUS_BULLET = 1;   //Génère une BULLET dans la main quand upgrade
     private static final int SP_COST = 0;
     private static final int SP_GAIN = 0;
 
     private static final int STRENGTH_AMT = 2;
     private static final int UPGRADE_PLUS_STRENGTH = 2;
+
+    private static final int WAVE_GAIN = 3;
+    private static final Integer[] elementsGain = {0, 0, 0, WAVE_GAIN};
 
 
     public static final Logger logger = LogManager.getLogger(Lea.class.getName());
@@ -55,9 +57,7 @@ public class VoiceAmplifier extends CrosscodeCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new StrengthPower(p, this.magicNumber), this.magicNumber, true, AbstractGameAction.AttackEffect.NONE));
         //+3 Wave
-        if(p.getClass().getSuperclass().getSimpleName().equals("CrosscodeCharacter")){
-            ((CrosscodeCharacter)p).gainElements(new Integer[]{0, 0, 0, 3});
-        }
+        addToBot(new RegainElementalAction(p, elementsGain));
         super.use(p, m);
     }
 

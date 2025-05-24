@@ -4,7 +4,7 @@
 
 <groupId>LeaCrosscode</groupId>
 <artifactId>LeaCrosscode</artifactId>
-<version>0.2.2</version>
+<version>0.2.4</version>
 <packaging>jar</packaging>
 
 <name>Lea.LeaCrosscode</name>
