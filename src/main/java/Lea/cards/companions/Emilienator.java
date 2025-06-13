@@ -26,8 +26,8 @@ public class Emilienator extends CrosscodeCard {
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String IMG_PATH = "img/Lea/cards/Wait.png";     //IMAGE A CHANGER
     private static final int COST = 1;
-    private static final int DAMAGE_AMT = 4;
-    private static final int UPGRADE_DMG_AMT = 2;   //Need a change later to apply 2 burn instead
+    private static final int DAMAGE_AMT = 6;
+    private static final int UPGRADE_DMG_AMT = 3;   //Need a change later to apply 2 burn instead
     private static final int SP_COST = 0;
     private static final int SP_GAIN = 0;
 

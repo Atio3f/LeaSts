@@ -28,7 +28,6 @@ public class VoiceAmplifier extends CrosscodeCard {
     // Get object containing the strings that are displayed in the game.
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
-    public static final String UPGRADE_DESC = cardStrings.UPGRADE_DESCRIPTION;
     public static final String IMG_PATH = "img/Lea/cards/Dash.png"; //IMAGE A MODIFIER
     private static final int COST = 1;
     private static final int SP_COST = 0;
@@ -72,7 +71,6 @@ public class VoiceAmplifier extends CrosscodeCard {
         if (!this.upgraded) {
             this.upgradeMagicNumber(UPGRADE_PLUS_STRENGTH);
             this.upgradeName();
-            this.rawDescription = UPGRADE_DESC;
         }
     }
 }

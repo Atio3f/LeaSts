@@ -60,11 +60,10 @@ public class VPRCharge extends CrosscodeCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
 
-        AbstractDungeon.actionManager.addToBottom(new DamageAction(m,
+        addToBot(new DamageAction(m,
                 new CrosscodeDamageInfo(p, this.damage, this.damageTypeForTurn, tags),
                 AbstractGameAction.AttackEffect.SMASH));
-        //A changer pour l'effet de Target quand il sera implémenté
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new TargetPower(m, this.magicNumber), this.magicNumber, true, AbstractGameAction.AttackEffect.NONE));
+        addToBot(new ApplyPowerAction(m, p, new TargetPower(m, this.magicNumber), this.magicNumber, true, AbstractGameAction.AttackEffect.NONE));
 
         System.out.println("TYPE DEGATS " + this.damageTypeForTurn);
         super.use(p, m);

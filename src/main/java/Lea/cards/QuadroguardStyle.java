@@ -38,7 +38,7 @@ public class QuadroguardStyle extends CrosscodeCard {
     public QuadroguardStyle() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
             AbstractCard.CardType.POWER, AbstractCardEnum.LEA_COBALT,
-            CardRarity.UNCOMMON, CardTarget.SELF, SP_COST, SP_GAIN); //Censé être légendaire on verra si c'est trop fort
+            CardRarity.RARE, CardTarget.SELF, SP_COST, SP_GAIN); //Censé être légendaire on verra si c'est trop fort
         logger.info("QuadroguardStyle" + DESCRIPTION + "---------------------------------------------------------------------------------------------------------------------------------\n\n");
         magicNumber = baseMagicNumber = PROTECTION_AMT;
 

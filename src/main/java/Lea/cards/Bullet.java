@@ -29,7 +29,7 @@ public class Bullet extends CrosscodeCard {
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String IMG_PATH = "img/Lea/cards/VPRCharge.png";        //IMAGE A CHANGER
     private static final int COST = 0;
-    private static final int ATTACK_DMG = 3;
+    private static final int ATTACK_DMG = 4;
     private static final int UPGRADE_PLUS_DMG = 2;
     private static final int SP_COST = 0;
     private static final int SP_GAIN = 0;

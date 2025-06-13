@@ -14,19 +14,19 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.watcher.VigorPower;
-
+//Protection get nerf by 1 flat reduction
 public class ProtectionPower extends AbstractPower {
     public static final String POWER_ID = "leacrosscode:ProtectionPower";
     public static final String NAME = "Protection";
     public static final String[] DESCRIPTIONS = new String[]{
-        "Reduce damage takes by attacks per !S!."   //!S! remplacé par stacks + 1 dans la fonction updateDescription
+        "Reduce damage takes by attacks per !S!."   //!S! remplacé par stacks (+ 1) dans la fonction updateDescription
     };
     public static final String[] DESCRIPTIONS_HEXA = new String[]{
         "Gain ",
         " Block at the end of your turn."
     };
     private boolean justApplied = false;
-    private static final int BASE_VALUE = 1; //Valeur de base de dégâts réduits sans compter le nombre de stacks
+    private static final int BASE_VALUE = 0; //Valeur de base de dégâts réduits sans compter le nombre de stacks c'était 1 avant mdr mais trop fort
 
     public ProtectionPower(AbstractCreature owner, int amount) {
         this.name = NAME;

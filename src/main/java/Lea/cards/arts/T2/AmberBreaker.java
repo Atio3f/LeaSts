@@ -51,6 +51,7 @@ public class AmberBreaker extends CrosscodeCard {
         tags.add(customEnums.SHOCK);
         tags.add(customEnums.DASH);
         tags.add(customEnums.COMBAT_ART);
+        tags.add(CardTags.HEALING); //Permet d'empêcher d'obtenir la carte via dead branch
 
     }
 

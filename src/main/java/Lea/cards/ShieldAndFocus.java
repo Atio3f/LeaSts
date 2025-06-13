@@ -1,12 +1,12 @@
-package Lea.cards.arts.starter;
+package Lea.cards;
 
 import Lea.Abstracts.CrosscodeCard;
 import Lea.characters.Lea;
 import Lea.enums.TypeDegats;
 import Lea.enums.customEnums;
 import Lea.patches.AbstractCardEnum;
-import Lea.powers.BarrierPower;
 import Lea.powers.ProtectionPower;
+import Lea.powers.TargetPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
@@ -18,8 +18,8 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class Barrier extends CrosscodeCard {
-    public static final String ID = "leacrosscode:Barrier";
+public class ShieldAndFocus extends CrosscodeCard {
+    public static final String ID = "leacrosscode:ShieldAndFocus";
     private static CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 
     // Get object containing the strings that are displayed in the game.
@@ -27,55 +27,47 @@ public class Barrier extends CrosscodeCard {
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String IMG_PATH = "img/Lea/cards/Hit&Block.png";    //IMAGE A CHANGER
     private static final int COST = 1;
-    private static final int BLOCK_VALUE = 4;
-    private static final int UPGRADE_PLUS_BLOCK = 3;
-    private static final int PROT_VALUE = 3;
-    private static final int CONVERSION_VALUE = 2;
-    private static final int UPGRADE_PLUS_CONV = 1;
-    private static final int SP_COST = 3;
+    private static final int PROT_VALUE = 5;
+    private static final int TARGET_AMT = 2;
+    private static final int UPGRADE_PLUS_TARGET = 2;
+    private static final int SP_COST = 0;
     private static final int SP_GAIN = 0;
 
     private static final TypeDegats TYPE_DEGATS = TypeDegats.NEUTRAL;
     public static final Logger logger = LogManager.getLogger(Lea.class.getName());
-    public Barrier() {
+    public ShieldAndFocus() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
             AbstractCard.CardType.SKILL, AbstractCardEnum.LEA_COBALT,
-            customEnums.COMBAT_ART_STARTER, CardTarget.SELF, SP_COST, SP_GAIN);
-        logger.info("Barrier" + DESCRIPTION + "---------------------------------------------------------------------------------------------------------------------------------\n\n");
+            CardRarity.COMMON, CardTarget.ENEMY, SP_COST, SP_GAIN);
+        logger.info("Shield&Focus" + DESCRIPTION + "---------------------------------------------------------------------------------------------------------------------------------\n\n");
 
-        this.block=this.baseBlock = BLOCK_VALUE;
-        this.magicNumber = this.baseMagicNumber = CONVERSION_VALUE;
+
+        this.magicNumber = this.baseMagicNumber = TARGET_AMT;
         tags.add(customEnums.NEUTRAL);
         tags.add(customEnums.SHIELD);
-        tags.add(customEnums.COMBAT_ART);
-        tags.add(CardTags.HEALING); //Permet d'empêcher d'obtenir la carte via dead branch
+        tags.add(CardTags.STARTER_DEFEND);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new GainBlockAction(p,
-            p, this.block));
         addToBot(new ApplyPowerAction(p,
-            p, new ProtectionPower(p, this.PROT_VALUE), this.PROT_VALUE, true, AbstractGameAction.AttackEffect.SHIELD));
-        addToBot(new ApplyPowerAction(p,
-            p, new BarrierPower(p, this.magicNumber), this.magicNumber, false, AbstractGameAction.AttackEffect.SHIELD));
+            p, new ProtectionPower(p, PROT_VALUE), PROT_VALUE, true, AbstractGameAction.AttackEffect.SHIELD));
+        addToBot(new ApplyPowerAction(m, p, new TargetPower(m, this.magicNumber), this.magicNumber, true, AbstractGameAction.AttackEffect.NONE));
 
         super.use(p, m);
     }
 
     @Override
     public AbstractCard makeCopy() {
-        logger.info("BarrierCOPY---------------------------------------------------------------------------------------------------------------------------------\n\n");
-        return new Barrier();
+        logger.info("Shield&FocusCOPY---------------------------------------------------------------------------------------------------------------------------------\n\n");
+        return new ShieldAndFocus();
     }
 
     @Override
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeBlock(UPGRADE_PLUS_BLOCK);
-            this.upgradeMagicNumber(UPGRADE_PLUS_CONV);
+            this.upgradeMagicNumber(UPGRADE_PLUS_TARGET);
         }
     }
 }
-

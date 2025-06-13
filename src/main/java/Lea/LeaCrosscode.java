@@ -122,6 +122,8 @@ public class LeaCrosscode implements
         BaseMod.addRelicToCustomPool(new BulletStock(), AbstractCardEnum.LEA_COBALT);
         BaseMod.addRelicToCustomPool(new FieryTitansGauntlet(), AbstractCardEnum.LEA_COBALT);
         BaseMod.addRelicToCustomPool(new MassCarnage(), AbstractCardEnum.LEA_COBALT);
+        BaseMod.addRelicToCustomPool(new ThunderBoots(), AbstractCardEnum.LEA_COBALT);
+        BaseMod.addRelicToCustomPool(new BloodMoon(), AbstractCardEnum.LEA_COBALT);
         /*for(EditCardsSubscriber perso : persos) {
             perso.receiveEditRelics();
         }*/

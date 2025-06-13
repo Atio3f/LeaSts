@@ -53,6 +53,7 @@ public class DivingSpark extends CrosscodeCard {
         tags.add(customEnums.DASH);
         tags.add(customEnums.COMBAT_ART);
         ElementCard = "Shock";
+        tags.add(CardTags.HEALING); //Permet d'empêcher d'obtenir la carte via dead branch
     }
 
     @Override

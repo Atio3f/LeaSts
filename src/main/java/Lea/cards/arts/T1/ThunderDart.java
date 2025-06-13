@@ -32,14 +32,14 @@ public class ThunderDart extends CrosscodeCard {
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String IMG_PATH = "img/Lea/cards/VPRCharge.png";        //IMAGE A CHANGER
     private static final int COST = 1;
-    private static final int ATTACK_DMG = 6;
+    private static final int ATTACK_DMG = 5;
     private static final int UPGRADE_PLUS_DMG = 2;
-    private static final int BLOCK_VALUE = 6;
+    private static final int BLOCK_VALUE = 5;
     private static final int UPGRADE_PLUS_BLOCK = 2;
     private static final int SP_COST = 3;
     private static final int SP_GAIN = 0;
 
-    private static final int JOLT_AMT = 3;
+    private static final int JOLT_AMT = 2;
     private static final int UPGRADE_PLUS_JOLT = 1;
     private static final int SHOCK_COST = 2;
 
@@ -59,6 +59,7 @@ public class ThunderDart extends CrosscodeCard {
         tags.add(customEnums.DASH);
         tags.add(customEnums.COMBAT_ART);
         ElementCard = "Shock";
+        tags.add(CardTags.HEALING); //Permet d'empêcher d'obtenir la carte via dead branch
     }
 
     @Override

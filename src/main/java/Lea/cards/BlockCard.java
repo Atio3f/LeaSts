@@ -27,7 +27,7 @@ public class BlockCard extends CrosscodeCard {
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String IMG_PATH = "img/Lea/cards/Hit&Block.png";    //IMAGE A CHANGER
     private static final int COST = 1;
-    private static final int BLOCK_VALUE = 3;
+    private static final int BLOCK_VALUE = 4;   //Up de 1 pour compenser le nerf des prots
     private static final int UPGRADE_PLUS_BLOCK = 2;
     private static final int PROT_VALUE = 2;
     private static final int UPGRADE_PLUS_PROT = 1;

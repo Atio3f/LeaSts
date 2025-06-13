@@ -30,8 +30,8 @@ public class SphereSaw extends CrosscodeCard {
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String IMG_PATH = "img/Lea/cards/SphereSaw.png";
     private static final int COST = 1;
-    private static final int ATTACK_DMG = 13;
-    private static final int UPGRADE_PLUS_DMG = 5;
+    private static final int ATTACK_DMG = 12;
+    private static final int UPGRADE_PLUS_DMG = 4;
     private static final int VULNERABLE_AMT = 1;
     private static final int UPGRADE_PLUS_VULNERABLE = 1;
     private static final int SP_COST = 2;
@@ -51,7 +51,7 @@ public class SphereSaw extends CrosscodeCard {
         tags.add(customEnums.NEUTRAL);
         tags.add(customEnums.MELEE);
         tags.add(customEnums.COMBAT_ART);
-
+        tags.add(CardTags.HEALING); //Permet d'empêcher d'obtenir la carte via dead branch
 
     }
 

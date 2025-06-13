@@ -50,7 +50,7 @@ public class BulletRain extends CrosscodeCard {
         tags.add(customEnums.NEUTRAL);
         tags.add(customEnums.BULLET);
         tags.add(customEnums.COMBAT_ART);
-
+        tags.add(CardTags.HEALING); //Permet d'empêcher d'obtenir la carte via dead branch
     }
 
     @Override

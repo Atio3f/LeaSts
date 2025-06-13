@@ -18,6 +18,7 @@ import Lea.cards.consumables.Durian;
 import Lea.cards.curses.MemoryLost;
 import Lea.cards.curses.Shocked;
 import Lea.cards.words.Bye;
+import Lea.cards.words.Hi;
 import Lea.cards.words.Wait;
 import Lea.enums.customEnums;
 import Lea.patches.AbstractCardEnum;
@@ -188,6 +189,12 @@ public class LeaMod implements CharacterMod{
         cards.add(new HexacastStyle());
         cards.add(new Barrier());
         cards.add(new VoiceAmplifier());
+        cards.add(new Hi());
+        cards.add(new StaticAura());
+        cards.add(new Sparkplosion());
+        cards.add(new ShieldAndFocus());
+        cards.add(new PolarityHack());
+
         //Place receiveEditCards from caracters here with the cards variable on it
 
         combatArtStarterPool = new CardGroup(CardGroup.CardGroupType.CARD_POOL);
@@ -230,6 +237,8 @@ public class LeaMod implements CharacterMod{
         BaseMod.addKeyword(new String[] {"mark", "marks", "marked", "Mark", "Marks", "Marked"}, "DESCRIPTION A AJOUTER");
         BaseMod.addKeyword(new String[] {"Target", "target"}, "Increase damage taken by BULLET by 2. Can only be applied to 1 ennemy.");
         BaseMod.addKeyword(new String[] {"Homing", "homing", "homed"}, "Shot a bullet to a random ennemy if no ennemy is marked.");
+        BaseMod.addKeyword(new String[] {"Combat Art", "combat art", "Combat Arts", "combat arts", "Combat art", "Combat arts"}, "Combat Arts cards cost SP depending of their category(T1=3SP, T2=6SP, T3=8SP).");
+
 
         BaseMod.addKeyword(new String[] {"Limitless Spam"}, "Each time you hit with a bullet, gain 1 temp Strength.");
 
@@ -246,6 +255,8 @@ public class LeaMod implements CharacterMod{
         BaseMod.addRelicToCustomPool(new BulletStock(), AbstractCardEnum.LEA_COBALT);
         BaseMod.addRelicToCustomPool(new FieryTitansGauntlet(), AbstractCardEnum.LEA_COBALT);
         BaseMod.addRelicToCustomPool(new MassCarnage(), AbstractCardEnum.LEA_COBALT);
+        BaseMod.addRelicToCustomPool(new ThunderBoots(), AbstractCardEnum.LEA_COBALT);
+        BaseMod.addRelicToCustomPool(new BloodMoon(), AbstractCardEnum.LEA_COBALT);
 
     }
 

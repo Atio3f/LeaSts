@@ -30,7 +30,7 @@ public class HexacastStyle extends CrosscodeCard {
     private static final int SP_COST = 0;
     private static final int SP_GAIN = 0;
 
-    private static final int MARK_AMT = 1;
+    private static final int MARK_AMT = 2;
     private static final int UPGRADE_PLUS_MARK = 1;
 
     public static final Logger logger = LogManager.getLogger(Lea.class.getName());
@@ -38,7 +38,7 @@ public class HexacastStyle extends CrosscodeCard {
     public HexacastStyle() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
             AbstractCard.CardType.POWER, AbstractCardEnum.LEA_COBALT,
-            AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.SELF, SP_COST, SP_GAIN); //Censé être légendaire on verra si c'est trop fort
+            AbstractCard.CardRarity.RARE, AbstractCard.CardTarget.SELF, SP_COST, SP_GAIN); //Censé être légendaire on verra si c'est trop fort
         logger.info("HexacastStyle" + DESCRIPTION + "---------------------------------------------------------------------------------------------------------------------------------\n\n");
         magicNumber = baseMagicNumber = MARK_AMT;
 
@@ -60,6 +60,7 @@ public class HexacastStyle extends CrosscodeCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
+            this.upgradeMagicNumber(UPGRADE_PLUS_MARK);
         }
     }
 }

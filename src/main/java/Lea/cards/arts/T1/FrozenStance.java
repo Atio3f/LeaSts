@@ -59,6 +59,7 @@ public class FrozenStance extends CrosscodeCard {
         tags.add(customEnums.SHIELD);
         tags.add(customEnums.COMBAT_ART);
         ElementCard = "Cold";
+        tags.add(CardTags.HEALING); //Permet d'empêcher d'obtenir la carte via dead branch
     }
 
     @Override
