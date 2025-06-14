@@ -201,7 +201,14 @@
   },"leacrosscode:VoiceAmplifier": {
     "NAME": "Voice Amplifier",
     "DESCRIPTION": "+3 Wave. NL Gain !M! Strength."
+  },"leacrosscode:Sparkplosion": {
+    "NAME": "Sparkplosion",
+    "DESCRIPTION": "Apply !M! Jolt to an ennemi and 2 Jolt to a random ennemi."
+  },"leacrosscode:PolarityHack": {
+    "NAME": "Polarity Hack",
+    "DESCRIPTION": "Apply !M! Jolt to an ennemi. Jolt can't reduce more than 2 per turn on it."
   }
+
 
 }
 

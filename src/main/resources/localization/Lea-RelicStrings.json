@@ -46,13 +46,25 @@
     "NAME": "Fiery Titans Gauntlet",
     "FLAVOR": "JSP",
     "DESCRIPTIONS": [
-      "+4 Heat -3 Cold NL On obtain, transform your Hit in Fiery Hit."
+      "+4 Heat -3 Cold NL On obtain, transform ALL your Hit into Fiery Hit."
     ]
   },"leacrosscode:MassCarnage": {
     "NAME": "Mass Carnage",
     "FLAVOR": "JSP",
     "DESCRIPTIONS": [
       "+1 Heat NL Whenever an enemy dies, gain 3 Vigor and draw 2 cards."
+    ]
+  },"leacrosscode:ThunderBoots": {
+    "NAME": "Thunder Boots",
+    "FLAVOR": "JSP",
+    "DESCRIPTIONS": [
+      "+4 Shock -3 Wave NL At the start of combat, apply 4 Jolt to ALL ennemies."
+    ]
+  },"leacrosscode:BloodMoon": {
+    "NAME": "Blood Moon",
+    "FLAVOR": "JSP",
+    "DESCRIPTIONS": [
+      "PAS FAIT ENCORE"
     ]
   }
 

@@ -30,7 +30,7 @@ public class PreparingAssault extends CrosscodeCard {
     public static final String IMG_PATH = "img/Lea/cards/Dash.png"; //IMAGE A MODIFIER
     private static final int COST = 1;
 
-    private static final int BULLET_AMT = 3;   //Génère une BULLET dans la main quand upgrade
+    private static final int BULLET_AMT = 4;   //Génère une BULLET dans la main quand upgrade
     private static final int SP_COST = 0;
     private static final int SP_GAIN = 0;
 

@@ -35,12 +35,14 @@ public class Sparkplosion extends CrosscodeCard {
 
     private static final int SP_COST = 0;
     private static final int SP_GAIN = 0;
+    private static final int SHOCK_COST = 1;
+
 
     public static final Logger logger = LogManager.getLogger(Lea.class.getName());
     public Sparkplosion() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
             AbstractCard.CardType.SKILL, AbstractCardEnum.LEA_COBALT,
-            CardRarity.COMMON, CardTarget.ENEMY, SP_COST, SP_GAIN);//p-ê commune
+            CardRarity.COMMON, CardTarget.ENEMY, SP_COST, SP_GAIN, SHOCK_COST);//p-ê commune
         logger.info("Sparkplosion" + DESCRIPTION + "---------------------------------------------------------------------------------------------------------------------------------\n\n");
         this.magicNumber = this.baseMagicNumber = JOLT_TARGET_AMT;
 
@@ -54,7 +56,7 @@ public class Sparkplosion extends CrosscodeCard {
 
         addToBot(new ApplyPowerAction(m, p, new JoltPower(m, p, this.magicNumber), this.magicNumber, true, AbstractGameAction.AttackEffect.BLUNT_LIGHT));
         AbstractMonster mRandom = AbstractDungeon.getMonsters().getRandomMonster(m, true);
-        if(mRandom != null){
+        if(mRandom != null ){//Peut être ça si on veut pas qu'il touche le même ennemi && mRandom != m FAUDRA SUREMENT FIX LA DESC APRES CA
             addToBot(new ApplyPowerAction(m, p, new JoltPower(m, p, JOLT_RANDOM_AMT), JOLT_RANDOM_AMT, true, AbstractGameAction.AttackEffect.NONE));
         }
 
